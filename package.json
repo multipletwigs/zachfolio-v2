@@ -6,7 +6,11 @@
     "start": "next start"
   },
   "dependencies": {
+    "@heroicons/react": "^2.0.12",
     "next": "latest",
+    "next-themes": "^0.2.1",
+    "prettier": "^2.7.1",
+    "prettier-plugin-tailwindcss": "^0.1.13",
     "react": "18.1.0",
     "react-dom": "18.1.0"
   },
