@@ -5,7 +5,11 @@ import { Container } from '../layouts/Container'
 const about: NextPage = () => {
   return (
     <Container>
-        <div>about</div>
+        <header>
+          <h1 className="text-3xl font-bold">Everything About Me!</h1>
+          <h3 className="text">What have I been doing for the past few years?</h3>
+        </header>
+        <p>I am a student from Monash Malaysia</p>
     </Container>
   )
 }

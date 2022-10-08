@@ -26,7 +26,7 @@ export function Container(props: any){
                 <meta property="og:url" content={`${siteMetaData.siteUrl}${router.asPath}`}/>
             </Head>
             <NavBar/>
-            <main className={`flex flex-col mx-auto max-w-6xl justify-center`}>
+            <main className={`flex flex-col mx-auto max-w-6xl justify-center px-10`}>
                 {children}
                 <Footer></Footer>
             </main>
