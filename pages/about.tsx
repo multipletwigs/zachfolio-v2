@@ -1,8 +1,10 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { NextPage } from 'next'
 import { Container } from '../layouts/Container'
+import { getDB } from 'lib/notion'
 
 const about: NextPage = () => {
+
   return (
     <Container>
         <header>

@@ -3,15 +3,38 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { siteMetaData } from '../data/siteMetadata'
 import { Container } from '../layouts/Container'
+import { getDB } from 'lib/notion'
+import { PageObjectResponse, PartialPageObjectResponse } from '@notionhq/client/build/src/api-endpoints'
+import GlassBio from 'components/GlassBio'
 
-const Home: NextPage = () => {
 
+/*
+Exporting getStaticProps will allow you to share a state in that is called in lib. 
+Whatever that is returned as props here will be passed down into the component below. 
+
+getStaticProps: allows for ISR, where we only want the server to generate the content following 
+a caching mechanism. This way your API doesn't get called every time the site gets rendered. 
+*/
+// export async function getStaticProps(){
+//   const post = await getDB(process.env.NOTION_BLOG_DB_ID as string); 
+
+//   return {
+//     props:{
+//       post
+//     }
+//   }
+// }
+
+const Home: NextPage = (props: any) => {
+
+  // console.log(props.post)
+  
   return (
     <Container>
       <header>
         <hgroup className={'grid justify-items-center text-center'}>
-        <div className="w-16 h-[800px] -translate-y-36 ranslate-x-64 -rotate-45 fixed rounded-full bg-gradient-to-r from-green-300 to-slate-300 blur-3xl -z-10"></div>
-        <div className="w-16 h-[800px] -translate-y-50 translate-x-64 -rotate-45 fixed rounded-full bg-gradient-to-r from-blue-300 to-slate-300 blur-3xl -z-10"></div>
+        <div className="w-16 h-[800px] -translate-y-36 -rotate-45 fixed rounded-full bg-gradient-to-r from-green-300 to-slate-300 blur-3xl -z-10 dark:from-indigo-800 dark:to-slate-800"></div>
+        <div className="w-16 h-[800px] -translate-y-50 translate-x-64 -rotate-45 fixed rounded-full bg-gradient-to-r from-blue-300 to-slate-300 blur-3xl -z-10 dark:from-blue-800 dark:to-slate-800"></div>
           <img src={siteMetaData.avatarImage} height={200} width={200} className="rounded-full mb-6"></img>
           <h1 className="text-4xl font-bold w-[90%]">
             Hi, I'm  
@@ -25,6 +48,7 @@ const Home: NextPage = () => {
           </div>
         </hgroup>
       </header>
+      <GlassBio/>
     </Container>
   )
 }

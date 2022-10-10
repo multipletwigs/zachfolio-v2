@@ -1,8 +1,10 @@
 import Head from "next/head";
 import { useRouter } from "next/router";
-import Footer from "../components/Footer";
-import NavBar from "../components/NavBar";
-import { siteMetaData } from "../data/siteMetadata";
+import Footer from "components/Footer";
+import NavBar from "components/NavBar";
+import { siteMetaData } from "data/siteMetadata"
+import SmallBlogItems from "components/SmallBlogItems";
+import GlassBio from "components/GlassBio";
 
 
 export function Container(props: any){

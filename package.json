@@ -23,5 +23,18 @@
     "postcss": "^8.4.14",
     "tailwindcss": "^3.1.2",
     "typescript": "4.7.2"
-  }
+  },
+  "prettier": {
+    "arrowParens": "always",
+    "singleQuote": true,
+    "tabWidth": 2,
+    "trailingComma": "none"
+  },
+  "name": "notionfolio",
+  "version": "1.0.0",
+  "description": "A portfolio website",
+  "main": "index.ts",
+  "repository": "https://github.com/multipletwigs/notionfolio.git",
+  "author": "Zach Khong <63769232+multipletwigs@users.noreply.github.com>",
+  "license": "MIT"
 }

@@ -14,8 +14,8 @@ const NavItem = ({ href, navTitle }: NavItemType) => {
   const router = useRouter();
   const isActive = router.asPath === href;
   return (
-    <NextLink href={href}>
-      <a className={`${isActive ? 'font-bold' : 'font-normal text-gray-500'}`}>
+    <NextLink className={'p-10 hover:bg-slate-50'} href={href}>
+      <a className={`${isActive ? 'font-bold p-3 hover:bg-slate-50/10' : 'font-normal text-gray-500 p-3 hover:bg-slate-50/10'}`}>
         <span className={`${isActive ? 'py-[1px] border-b-2 border-rose-400' : 'capsize'}`}>
           {navTitle}
         </span>

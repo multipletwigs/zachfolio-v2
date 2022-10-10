@@ -1,4 +1,8 @@
 /** @type {import('next').NextConfig} */
 module.exports = {
-  reactStrictMode: true,
+  // React 18 strict mode causes double rerenders
+  reactStrictMode: false,
+  env:{
+    BASE_URL: process.env.BASE_URL
+  }
 }
