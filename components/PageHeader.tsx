@@ -5,7 +5,6 @@ interface PageHeader {
     desc: string 
 }
 
-
 const PageHeader = ({title, desc}: PageHeader) => {
   return (
     <header className="text-center py-3 font-sans">
