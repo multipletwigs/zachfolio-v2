@@ -4,7 +4,7 @@ import React from 'react';
 import { Container } from '../layouts/Container';
 
 export interface NotionBlogProps {
-  statuses: BlogStatusType[];
+  statuses: string[];
 }
 
 /*
@@ -31,13 +31,13 @@ export async function getStaticProps() {
  * try to explicitly type this. 
  */
 const blog = ({ post }: InferGetStaticPropsType<typeof getStaticProps>) => {
-  const allStatus: BlogStatusType[] = post.statuses;
+  const allStatus: string[] = post.statuses;
   console.log(post.statuses)
   return (
     <Container>
       <div>Blog</div>
       <div>All blog statuses</div>
-      {allStatus.map((status: BlogStatusType, idx: number) => {
+      {allStatus.map((status: string, idx: number) => {
         return <div key={idx}>{status}</div>;
       })}
     </Container>

@@ -6,8 +6,8 @@ import { NotionBlogProps } from "pages/blog";
  * String enums to satisfy the conversion to PageSelectProperty 
  */
 export enum BlogStatusType{
-    'Unfinished', 
-    'Planning',
+    UNFINISHED = 'Unfinished', 
+    PLANNING = 'Planning',
 }
 
 /**
@@ -23,7 +23,7 @@ interface PageStatusProperty{
 
 interface PageSelectProperty{
     id: string,
-    name: BlogStatusType,
+    name: string,
     color: string,
 }
 
@@ -41,7 +41,6 @@ export const getDB = async (databaseID: string) => {
     const pageStatus: NotionBlogProps = {
         statuses: allPages.map((pageObj: PageObjectResponse) => {
             const pageStatus = pageObj.properties['Article Status'] as PageStatusProperty
-            console.log(pageStatus)
             return pageStatus.select.name
         })
     }
