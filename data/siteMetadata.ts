@@ -12,6 +12,6 @@ export const siteMetaData = {
     github:"https://github.com/multipletwigs",
     githubHandle: "@multipletwigs", 
     linkedin: "https://www.linkedin.com/in/zach-khong/",
-    resume: '/static/Internship Resume (Khong Lap Hoe)-compressed.pdf',
+    resume: 'public/static/Internship Resume (Khong Lap Hoe)-compressed.pdf',
     locale: 'en-MY'
 }
