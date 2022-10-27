@@ -23,7 +23,7 @@ interface PageStatusProperty{
 
 interface PageSelectProperty{
     id: string,
-    name: string,
+    name: BlogStatusType,
     color: string,
 }
 
