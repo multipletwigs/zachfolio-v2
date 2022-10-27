@@ -14,6 +14,7 @@ module.exports = {
     extend: {
       fontFamily:{
         sans:['Quicksand', ...defaultTheme.fontFamily.sans],
+        serif:['Arvo', ...defaultTheme.fontFamily.serif],
         mono:[...defaultTheme.fontFamily.mono], 
       }
     },

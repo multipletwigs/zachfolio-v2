@@ -24,7 +24,7 @@ const BioGraphyItems: BiographyItem[] = [
     },
     {
         key: "Year Level",
-        desc: "Year 3 Semester 1 🎉 top 1% of cohort population"
+        desc: "Year 3 Semester 1 🎉 Current scoring within top 1% of cohort population"
     },
     {
         key: "Interests",

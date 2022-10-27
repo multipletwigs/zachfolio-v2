@@ -10,10 +10,11 @@ const ColorModeToggle = () => {
     setMounted(true);
   });
 
+  // remember to fix navbar as a clickable popup
   return (
     <>
       {mounted && (
-        <div className="flex gap-2">
+        <div className="sm:flex gap-2 hidden">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"

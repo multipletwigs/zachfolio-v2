@@ -1,10 +1,11 @@
+import SerifHeader from 'components/SerifHeader';
 import { BlogStatusType, getDB } from 'lib/notion';
 import { InferGetServerSidePropsType, InferGetStaticPropsType, NextPage } from 'next/types';
 import React from 'react';
 import { Container } from '../layouts/Container';
 
 export interface NotionBlogProps {
-  statuses: string[];
+  statuses: BlogStatusType[];
 }
 
 /*
@@ -31,13 +32,12 @@ export async function getStaticProps() {
  * try to explicitly type this. 
  */
 const blog = ({ post }: InferGetStaticPropsType<typeof getStaticProps>) => {
-  const allStatus: string[] = post.statuses;
-  console.log(post.statuses)
+  const allStatus: BlogStatusType[] = post.statuses;
   return (
     <Container>
-      <div>Blog</div>
-      <div>All blog statuses</div>
-      {allStatus.map((status: string, idx: number) => {
+      <SerifHeader title={"A documentation about my life."}/>
+      <div>This page is still under construction</div>
+      {allStatus.map((status: BlogStatusType, idx: number) => {
         return <div key={idx}>{status}</div>;
       })}
     </Container>
