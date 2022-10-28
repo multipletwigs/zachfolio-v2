@@ -14,12 +14,13 @@ a caching mechanism. This way your API doesn't get called every time the site ge
 */
 export async function getStaticProps() {
 
-  const postItems = await getBlogCardInfo(process.env.NOTION_BLOG_DB_ID as string )
+  const postItems: BlogCardType[] = await getBlogCardInfo(process.env.NOTION_BLOG_DB_ID as string )
 
   return {
     props: {
       postItems
     },
+    revalidate: 10, 
   };
 }
 
@@ -34,8 +35,14 @@ const blog = ({ postItems }: InferGetStaticPropsType<typeof getStaticProps>) => 
     <Container>
       <SerifHeader title={"A documentation about my life."} footer_desc={"EVERYTHING I KNOW ABOUT"}/>
       {postItems.map((postItem: BlogCardType, idx:number) => {
-        return <div key={idx}>{postItem.description}</div>;
+        return (
+          <div key={idx}>
+            <h1>{postItem.title}</h1>
+            <p>{postItem.description}</p>
+          </div>
+        );
       })}
+      {/* <div>{postItems[0].title}</div> */}
     </Container>
   );
 };

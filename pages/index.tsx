@@ -1,17 +1,9 @@
 import type { NextPage } from 'next';
-import Head from 'next/head';
-import Image from 'next/image';
 import { siteMetaData } from '../data/siteMetadata';
 import { Container } from '../layouts/Container';
-import { getDB } from 'lib/notion';
-import {
-  PageObjectResponse,
-  PartialPageObjectResponse
-} from '@notionhq/client/build/src/api-endpoints';
 import GlassBio from 'components/GlassBio';
 
 const Home: NextPage = (props: any) => {
-  console.log(props.post);
 
   return (
     <Container>
