@@ -1,15 +1,14 @@
 import React, { useEffect } from 'react'
 import { NextPage } from 'next'
 import { Container } from '../layouts/Container'
-import { getDB } from 'lib/notion'
-import PageHeader from 'components/PageHeader'
+import SerifHeader from 'components/SerifHeader'
 
 const about: NextPage = () => {
 
   return (
     <Container>
-        <PageHeader title={"Everything About Me"} desc={'What I am current doing'}/>
-        <p>I am a student from Monash Malaysia</p>
+      <SerifHeader title={'Everything about me!'} footer_desc={"PERSONAL"}></SerifHeader>
+      <p>I am a student from Monash Malaysia</p>
     </Container>
   )
 }

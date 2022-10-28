@@ -1,12 +1,9 @@
 import SerifHeader from 'components/SerifHeader';
-import { BlogStatusType, getDB } from 'lib/notion';
-import { InferGetServerSidePropsType, InferGetStaticPropsType, NextPage } from 'next/types';
+import { BlogCardType, getBlogCardInfo } from 'lib/getBlogContent';
+import { InferGetStaticPropsType } from 'next/types';
 import React from 'react';
-import { Container } from '../layouts/Container';
+import { Container } from '../../layouts/Container';
 
-export interface NotionBlogProps {
-  statuses: BlogStatusType[];
-}
 
 /*
 Exporting getStaticProps will allow you to share a state in that is called in lib. 
@@ -16,13 +13,13 @@ getStaticProps: allows for ISR, where we only want the server to generate the co
 a caching mechanism. This way your API doesn't get called every time the site gets rendered. 
 */
 export async function getStaticProps() {
-  const post: NotionBlogProps = await getDB(process.env.NOTION_BLOG_DB_ID as string);
+
+  const postItems = await getBlogCardInfo(process.env.NOTION_BLOG_DB_ID as string )
 
   return {
     props: {
-      post
+      postItems
     },
-    revalidate: 3600, 
   };
 }
 
@@ -31,14 +28,13 @@ export async function getStaticProps() {
  * This allows your TypeScript from getStaticProps to be inferred. You shouldn't
  * try to explicitly type this. 
  */
-const blog = ({ post }: InferGetStaticPropsType<typeof getStaticProps>) => {
-  const allStatus: BlogStatusType[] = post.statuses;
+const blog = ({ postItems }: InferGetStaticPropsType<typeof getStaticProps>) => { 
+
   return (
     <Container>
-      <SerifHeader title={"A documentation about my life."}/>
-      <div>This page is still under construction</div>
-      {allStatus.map((status: BlogStatusType, idx: number) => {
-        return <div key={idx}>{status}</div>;
+      <SerifHeader title={"A documentation about my life."} footer_desc={"EVERYTHING I KNOW ABOUT"}/>
+      {postItems.map((postItem: BlogCardType, idx:number) => {
+        return <div key={idx}>{postItem.description}</div>;
       })}
     </Container>
   );
