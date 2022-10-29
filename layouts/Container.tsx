@@ -25,6 +25,7 @@ export function Container(props: any){
             <Head>
                 <title>{page_meta.title}</title>
                 <meta content={page_meta.description} name="description"/>
+                <meta name="google-site-verification" content="xzeYzuuxCS2qLIB-dqzoCdFT-Xm-QLT_Msl8ozh5944" />
                 <meta property="og:url" content={`${siteMetaData.siteUrl}${router.asPath}`}/>
             </Head>
             <NavBar/>
