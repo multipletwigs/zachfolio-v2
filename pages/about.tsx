@@ -8,27 +8,27 @@ import GlassBio from 'components/GlassBio';
 
 const self_intro = (
   <p className="my-4 text-justify dark:text-slate-200 md:w-[60%]">
-    Yup, that's me on the left (or above if you're on mobile), and I have made
+    Yup, that&apos;s me on the left (or above if you&apos;re on mobile), and I have made
     coding my life since I joined Monash University. Believe it or not, I wanted
     to become a doctor when I was in college (Methodist College). I was doing
     decent, but not exceptional. I eventually got burnt out from memorization in
-    Biology and ventured into a domain that I've never even heard of before:
+    Biology and ventured into a domain that I&apos;ve never even heard of before:
     Computer Science.
     <br />
     <br />
-    I started off by taking Harvard's free CS50 Course, and since then I
-    was hooked by the power of programming. It's quite literally a super power
+    I started off by taking Harvard&apos;s free CS50 Course, and since then I
+    was hooked by the power of programming. It&apos;s quite literally a super power
     to code. Imagine a world where you can create anything, and this is the
     world of software I currently live in, making literally whatever I want.
     <br/>
     <br/>
-    In Monash I'm lucky enough to meet peers and friends who are exceptionally talented, and I'm glad to be able to learn from them. Their drive for success is contagious, and I'm grateful that they are in my life.
+    In Monash I&apos;m lucky enough to meet peers and friends who are exceptionally talented, and I&apos;m glad to be able to learn from them. Their drive for success is contagious, and I&apos;m grateful that they are in my life.
     <br/>
     <br/>
-    Alright! Yes, my professional skills? I'm a full stack developer, and I realized that I'm rather good at UI/UX Designs and Front-end development. I call myself full stack as I work so closely with backend teams I sometimes write the backend myself. But what I love is still Frontend Development and design. 
+    Alright! Yes, my professional skills? I&apos;m a full stack developer, and I realized that I&apos;m rather good at UI/UX Designs and Front-end development. I call myself full stack as I work so closely with backend teams I sometimes write the backend myself. But what I love is still Frontend Development and design. 
     <br/>
     <br/>
-    I'm currently leading a self-learning group called UReview, and since we have no work experience, everything that I know now is done through self-learning, and I'm really happy to see how far I've come from doing basic HTML pages to writing fullstack applications and configuring deployment platforms like DigitalOcean. 
+    I&apos;m currently leading a self-learning group called UReview, and since we have no work experience, everything that I know now is done through self-learning, and I&apos;m really happy to see how far I&apos;ve come from doing basic HTML pages to writing fullstack applications and configuring deployment platforms like DigitalOcean. 
   </p>
 );
 
