@@ -2,7 +2,7 @@ import type { NextPage } from 'next';
 import { siteMetaData } from '../data/siteMetadata';
 import { Container } from '../layouts/Container';
 import Image from 'next/future/image';
-import GlassBio from 'components/GlassBio';
+import GlassBio from 'components/about_components/GlassBio';
 
 const Home: NextPage = () => {
 
