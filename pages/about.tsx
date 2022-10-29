@@ -60,7 +60,7 @@ const about: NextPage = () => {
         <aside className="flex flex-col justify-center md:flex-row md:justify-between">
           <figure>
             <Image
-              priority
+              priority={true}
               src={siteMetaData.avatarImage_2}
               alt={
                 'An image of Zach Khong taking a picture with a live size eevee plush'

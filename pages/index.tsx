@@ -13,6 +13,7 @@ const Home: NextPage = () => {
           <div className="fixed -z-10 h-[800px] w-16 -translate-y-36 -rotate-45 rounded-full bg-gradient-to-r from-green-300 to-slate-300 blur-3xl dark:from-indigo-800 dark:to-slate-800"></div>
           <div className="-translate-y-50 fixed -z-10 h-[800px] w-16 translate-x-64 -rotate-45 rounded-full bg-gradient-to-r from-blue-300 to-slate-300 blur-3xl dark:from-blue-800 dark:to-slate-800"></div>
           <Image
+            priority={true}
             src={siteMetaData.avatarImage}
             height={200}
             width={200}
