@@ -7,7 +7,7 @@ import { siteMetaData } from 'data/siteMetadata';
 import GlassBio from 'components/GlassBio';
 
 const self_intro = (
-  <p className="mt-4 text-justify dark:text-slate-200 md:w-[60%]">
+  <p className="my-4 text-justify dark:text-slate-200 md:w-[60%]">
     Yup, that's me on the left (or above if you're on mobile), and I have made
     coding my life since I joined Monash University. Believe it or not, I wanted
     to become a doctor when I was in college (Methodist College). I was doing
