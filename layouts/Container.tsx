@@ -39,7 +39,7 @@ export function Container(props: any) {
         className={`mx-auto flex max-w-6xl flex-col justify-center px-10 sm:py-10`}
       >
         <PageTransition>
-        {children}
+            {children}
         </PageTransition>
         <Footer></Footer>
       </main>
