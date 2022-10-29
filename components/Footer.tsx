@@ -1,6 +1,4 @@
 import React from 'react'
-import { getDB } from "../lib/notion"
-
 
 const Footer = () => {
   // console.log(getDB(process.env.NEXT_PUBLIC_NOTION_DB as string))
