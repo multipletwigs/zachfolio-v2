@@ -1,9 +1,10 @@
 import type { NextPage } from 'next';
 import { siteMetaData } from '../data/siteMetadata';
 import { Container } from '../layouts/Container';
+import Image from 'next/future/image';
 import GlassBio from 'components/GlassBio';
 
-const Home: NextPage = (props: any) => {
+const Home: NextPage = () => {
 
   return (
     <Container>
@@ -11,12 +12,13 @@ const Home: NextPage = (props: any) => {
         <hgroup className={'grid justify-items-center text-center'}>
           <div className="fixed -z-10 h-[800px] w-16 -translate-y-36 -rotate-45 rounded-full bg-gradient-to-r from-green-300 to-slate-300 blur-3xl dark:from-indigo-800 dark:to-slate-800"></div>
           <div className="-translate-y-50 fixed -z-10 h-[800px] w-16 translate-x-64 -rotate-45 rounded-full bg-gradient-to-r from-blue-300 to-slate-300 blur-3xl dark:from-blue-800 dark:to-slate-800"></div>
-          <img
+          <Image
             src={siteMetaData.avatarImage}
             height={200}
             width={200}
-            className="mb-6 rounded-full"
-          ></img>
+            alt="Rounded Image of Zach Khong Lap Hoe"
+            className="rounded-full mb-5"
+          ></Image>
           <h1 className="w-[90%] text-4xl font-bold">
             Hi, I&apos;m
             <span className="text-indigo-400"> Zach Khong. </span>
@@ -37,7 +39,6 @@ const Home: NextPage = (props: any) => {
           </div>
         </hgroup>
       </header>
-      <GlassBio />
     </Container>
   );
 };

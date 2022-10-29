@@ -8,6 +8,7 @@ export const siteMetaData = {
     siteUrl: 'https://zachfolio.info', 
     siteRepo: "",
     avatarImage: "/static/zach_khong.jpg", 
+    avatarImage_2: "/static/eevee_zach.jpg",
     email: "mailto:lkho0007@student.monash.edu", 
     github:"https://github.com/multipletwigs",
     githubHandle: "@multipletwigs", 

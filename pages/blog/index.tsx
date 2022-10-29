@@ -1,4 +1,4 @@
-import SerifHeader from 'components/SerifHeader';
+import { SerifHeader } from 'components/SerifHeader';
 import { BlogCardType, getBlogCardInfo } from 'lib/getBlogContent';
 import { InferGetStaticPropsType } from 'next/types';
 import React from 'react';
