@@ -39,7 +39,7 @@ const blog = ({ postItems }: InferGetStaticPropsType<typeof getStaticProps>) => 
         return (
           <div key={idx}>
             {
-              postItem.articleCover ? <Image width={100} height={50} alt={postItem.articleCover} src={postItem.articleCover}></Image> : null
+              postItem.articleCover ? <Image priority width={100} height={50} alt={postItem.articleCover} src={postItem.articleCover}></Image> : null
             }
             <h1>{postItem.title}</h1>
             <p>{postItem.description}</p>

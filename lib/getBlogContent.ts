@@ -15,11 +15,6 @@ interface NotionBlogProperty {
   'Article Genre': any;
 }
 
-interface ExternalBlogProperty {
-  external: any
-}
-
-
 /**
  * Actual BlogCardContent and type 
  */
@@ -58,14 +53,9 @@ export const getBlogCardInfo = async (databaseId: string) => {
       const { created_time, last_edited_time } = page;
 
       // From the cover object
-      const externalImage = page.cover ? page.cover as any as ExternalBlogProperty : null;
+      const externalImage = page.cover ? (page.cover.type === "external" ? page.cover.external.url : page.cover.file.url) : null;
 
-      // External image url 
-      const coverURL = externalImage ? externalImage.external.url : null;
-
-      console.log(coverURL)
-
-      // From the property object
+      // From the property object, since the key is the name of the property
       const pageProperties = page.properties as any as NotionBlogProperty;
       const { Name, Description } = pageProperties;
 
@@ -80,7 +70,7 @@ export const getBlogCardInfo = async (databaseId: string) => {
         title: Name['title'][0].plain_text,
         description: articleDesc,
         articleGenre: pageProperties['Article Genre']['select']['name'], 
-        articleCover:coverURL,
+        articleCover:externalImage,
         date: created_time,
         last_edited: last_edited_time
       } as BlogCardType;
