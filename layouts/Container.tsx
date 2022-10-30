@@ -3,8 +3,6 @@ import { useRouter } from 'next/router';
 import Footer from 'components/Footer';
 import NavBar from 'components/NavBar';
 import { siteMetaData } from 'data/siteMetadata';
-import SmallBlogItems from 'components/SmallBlogItems';
-import GlassBio from 'components/about_components/GlassBio';
 import { PageTransition } from 'components/PageTransition';
 
 export function Container(props: any) {

@@ -9,12 +9,8 @@ import WorkExpTable from 'components/about_components/WorkExpTable';
 
 const self_intro = (
   <p className="my-4 text-justify text-lg dark:text-slate-200">
-    Yup, that&apos;s me on the left (or above if you&apos;re on mobile), and I
-    have made coding my life since I joined Monash University. Believe it or
-    not, I wanted to become a doctor when I was in college (Methodist College).
-    I was doing decent, but not exceptional. I eventually got burnt out from
-    memorization in Biology and ventured into a domain that I&apos;ve never even
-    heard of before: Computer Science.
+    I eventually got burnt out from memorization in Biology and ventured into a
+    domain that I&apos;ve never even heard of before: Computer Science.
     <br />
     <br />
     Alright! Yes, my professional skills? I&apos;m a full stack developer, and I
@@ -26,9 +22,9 @@ const self_intro = (
     <br />
     I&apos;m currently leading a self-learning group called UReview, and since
     we have no work experience, everything that I know now is done through
-    self-learning, and I&apos;m really happy to see how far I&apos;ve come from
-    doing basic HTML pages to writing fullstack applications and configuring
-    deployment platforms like DigitalOcean.
+    self-learning. Lorem ipsum dolor sit amet consectetur adipisicing elit.
+    Facilis numquam laborum in accusantium veniam necessitatibus molestiae
+    ducimus qui, repellendus rerum.
   </p>
 );
 
@@ -36,7 +32,10 @@ const aboutContent = {
   name: 'ZACH KHONG',
   chi_name: '邝立浩',
   header: 'Everything I wanted to do in my life is to create what I want to',
-  self_intro_p: self_intro
+  self_intro_p: self_intro,
+  tech_exp_header: 'Technical Experiences',
+  tech_exp_p:
+    "I have been coding for a year or two now. I've racked up a lot of rudimentary knowledge in software engineering. Be it through assignments, hackathons, personal projects or school organizations, I spend a lot of time to hone my craft. I'll mention a few highlights :)"
 };
 
 const about: NextPage = () => {
@@ -49,7 +48,7 @@ const about: NextPage = () => {
       <div className="mt-20">
         <GlassBio />
       </div>
-      <article className={'mt-20 flex flex-col justify-between md:flex-row'}>
+      <article className={'my-20 flex flex-col justify-between md:flex-row'}>
         <header className={'flex flex-col'}>
           <h2 className={'text-2xl tracking-widest text-slate-400'}>
             {aboutContent.name}
@@ -68,18 +67,28 @@ const about: NextPage = () => {
               className={'mt-5 h-[300px] w-[300px]'} //explicity setting height and width to prevent image from being stretched, due to important setting in tailwind.config.js
             />
             <figcaption className={'mt-4'}>
-              — Me and live sized eevee ?!, <cite>Animecon-2022</cite>
+              — Me and live sized Eevee ?!
+              <br />
+              <cite>Animecon-2022</cite>
             </figcaption>
           </figure>
         </header>
         <aside className="flex flex-col md:w-[60%]">
-          <h1 className="mt-5 text-left text-2xl text-rose-400 md:mt-0 md:text-right md:text-3xl">
+          <h1 className="mt-5 text-left text-2xl text-teal-400 md:mt-0 md:text-right md:text-3xl">
             {aboutContent.header}
           </h1>
           {aboutContent.self_intro_p}
         </aside>
       </article>
-      <WorkExpTable/>
+      <section>
+        <header className="mb-10">
+          <h2 className={'text-2xl text-teal-400 md:text-3xl'}>
+            {aboutContent.tech_exp_header}
+          </h2>
+          <p className="text-lg text-justify dark:text-slate-200">{aboutContent.tech_exp_p}</p>
+        </header>
+        <WorkExpTable />
+      </section>
     </Container>
   );
 };

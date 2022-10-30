@@ -16,8 +16,10 @@ module.exports = {
         sans:['Quicksand', ...defaultTheme.fontFamily.sans],
         serif:['Arvo', ...defaultTheme.fontFamily.serif],
         mono:[...defaultTheme.fontFamily.mono], 
-      }
+      },
+
     },
   },
-  plugins: [],
+  plugins: [
+  ]
 }
