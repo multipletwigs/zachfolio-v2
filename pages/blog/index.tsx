@@ -1,5 +1,6 @@
 import { SerifHeader } from 'components/SerifHeader';
 import { BlogCardType, getBlogCardInfo } from 'lib/getBlogContent';
+import Image from 'next/image';
 import { InferGetStaticPropsType } from 'next/types';
 import React from 'react';
 import { Container } from '../../layouts/Container';
@@ -37,6 +38,9 @@ const blog = ({ postItems }: InferGetStaticPropsType<typeof getStaticProps>) => 
       {postItems.map((postItem: BlogCardType, idx:number) => {
         return (
           <div key={idx}>
+            {
+              postItem.articleCover ? <Image width={100} height={50} src={postItem.articleCover}></Image> : null
+            }
             <h1>{postItem.title}</h1>
             <p>{postItem.description}</p>
           </div>
