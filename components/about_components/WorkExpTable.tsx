@@ -76,12 +76,12 @@ export default function WorkExpTable() {
         </Tab.List>
         {/* Animate the transition between the tabs */}
         <Tab.Panels className="w-full py-2.5 px-5">
-            {TechExperience.map((exp) => {
+            {TechExperience.map((exp, idx) => {
             return (
               // I couldnt get headlessui's transitions to work
               // Hence I found a solution that uses AnimatePresence from framer
               // https://github.com/tailwindlabs/headlessui/discussions/1237
-              <AnimatePresence exitBeforeEnter>
+              <AnimatePresence exitBeforeEnter key={idx}>
                 <Tab.Panel 
                 as={motion.div}
                 initial="hide"
