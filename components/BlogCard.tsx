@@ -1,12 +1,22 @@
-import React from 'react'
-import { BlogCardType } from 'lib/getBlogContent'
+import React from 'react';
+import { BlogCardType } from 'lib/getBlogContent';
+import Image from 'next/image';
 
-
-const BlogItems = (props: BlogCardType) => {
-  
+const BlogCard = ({ props }: {props: BlogCardType}) => {
   return (
-    <div>BlogItems</div>
-  )
-}
+    <div>
+      <Image
+        priority
+        width={300}
+        height={300}
+        alt={props.articleCover!}
+        src={props.articleCover!}
+      ></Image>
 
-export default BlogItems
+      <h1>{props.title}</h1>
+      <p>{props.description}</p>
+    </div>
+  );
+};
+
+export default BlogCard;
