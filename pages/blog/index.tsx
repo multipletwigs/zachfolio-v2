@@ -14,6 +14,7 @@ getStaticProps: allows for ISR, where we only want the server to generate the co
 a caching mechanism. This way your API doesn't get called every time the site gets rendered. 
 */
 export async function getStaticProps() {
+  const HOURS = 1
   const postItems: BlogCardType[] = await getBlogCardInfo(
     process.env.NOTION_BLOG_DB_ID as string
   );
@@ -22,7 +23,7 @@ export async function getStaticProps() {
     props: {
       postItems
     },
-    revalidate: 10
+    revalidate: 60 * 60 * 60 * HOURS
   };
 }
 

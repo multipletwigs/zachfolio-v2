@@ -1,4 +1,5 @@
 import { Tab } from '@headlessui/react';
+import Tag from 'components/Tag';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useState } from 'react';
 
@@ -15,18 +16,18 @@ const variant = {
     transition: {
       duration: 0.2,
       ease: 'linear',
-      when: 'beforeChildren',
-    },
+      when: 'beforeChildren'
+    }
   },
   show: {
     opacity: 1,
     transition: {
       duration: 0.2,
       ease: 'linear',
-      when: 'beforeChildren',
-    },
-  },
-}
+      when: 'beforeChildren'
+    }
+  }
+};
 
 const TechExperience: TechExperienceType[] = [
   {
@@ -34,7 +35,7 @@ const TechExperience: TechExperienceType[] = [
     description:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis unde at commodi laborum sequi quam nam voluptas officia voluptatem distinctio. Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus repellat in suscipit recusandae molestiae doloribus praesentium!',
     link: 'testing',
-    stack: []
+    stack: [<Tag content='March 2011 - May 2021' bgColor='bg-slate-400/30' textColor='text-slate-300'/>, <Tag content='March 2011 - May 2021' bgColor='bg-slate-400/30' textColor='text-slate-300'/>]
   },
   {
     name: 'Vaccu Monash',
@@ -57,7 +58,12 @@ export default function WorkExpTable() {
 
   return (
     <div className="flex h-[450px] flex-col gap-5 px-2 sm:px-0 md:h-[300px] md:flex-row">
-      <Tab.Group vertical selectedIndex={tabIndex} onChange={(index) => setTabIndex(index)} manual>
+      <Tab.Group
+        vertical
+        selectedIndex={tabIndex}
+        onChange={(index) => setTabIndex(index)}
+        manual
+      >
         <Tab.List className="flex w-full flex-row gap-3 rounded-xl p-1 md:w-[30%] md:flex-col">
           {TechExperience.map((exp) => {
             return (
@@ -76,21 +82,31 @@ export default function WorkExpTable() {
         </Tab.List>
         {/* Animate the transition between the tabs */}
         <Tab.Panels className="w-full py-2.5 px-5">
-            {TechExperience.map((exp, idx) => {
+          {TechExperience.map((exp, idx) => {
             return (
               // I couldnt get headlessui's transitions to work
               // Hence I found a solution that uses AnimatePresence from framer
               // https://github.com/tailwindlabs/headlessui/discussions/1237
+              // AnimatePresence is the best job here because panels are transitioned in and out through hide/shows
               <AnimatePresence exitBeforeEnter key={idx}>
-                <Tab.Panel 
-                as={motion.div}
-                initial="hide"
-                animate="show"
-                exit="hide"
-                variants={variant}
-                key={exp.name} className="text-left md:text-right">
-                  <h1 className="mb-5 text-2xl font-bold">{exp.name}</h1>
-                  <p>{exp.description}</p>
+                <Tab.Panel
+                  as={motion.div}
+                  initial="hide"
+                  animate="show"
+                  exit="hide"
+                  variants={variant}
+                  key={exp.name}
+                  className="text-left"
+                >
+                  <div className="flex items-center justify-between">
+                    <h1 className="text-2xl font-bold">{exp.name}</h1>
+                    <div className="inline-block">
+                      {exp.stack.map((tag) => {
+                        return tag; 
+                      })}
+                    </div>
+                  </div>
+                  <p className="mt-1">{exp.description}</p>
                 </Tab.Panel>
               </AnimatePresence>
             );
