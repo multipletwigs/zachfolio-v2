@@ -1,7 +1,6 @@
-import BlogCard from 'components/BlogCard';
+import BlogCard from 'components/blog_components/BlogCard';
 import { SerifHeader } from 'components/SerifHeader';
-import { BlogCardType, getBlogCardInfo } from 'lib/getBlogContent';
-import Image from 'next/image';
+import { BlogCardType, getBlogCardInfo } from 'lib/getBlogContent';import Image from 'next/image';
 import { InferGetStaticPropsType } from 'next/types';
 import React from 'react';
 import { Container } from '../../layouts/Container';
@@ -32,7 +31,7 @@ export async function getStaticProps() {
  * This allows your TypeScript from getStaticProps to be inferred. You shouldn't
  * try to explicitly type this.
  */
-const blog = ({
+const Blog = ({
   postItems
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
   return (
@@ -41,7 +40,7 @@ const blog = ({
         title={'A documentation about my life.'}
         footer_desc={'EVERYTHING I KNOW ABOUT'}
       />
-      <div className="grid grid-cols-3">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-items-center gap-y-10 mt-10">
       {postItems.map((postItem: BlogCardType, idx: number) => {
         return (
           <BlogCard
@@ -56,4 +55,4 @@ const blog = ({
   );
 };
 
-export default blog;
+export default Blog;
