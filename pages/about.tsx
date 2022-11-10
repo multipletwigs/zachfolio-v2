@@ -45,7 +45,7 @@ const about: NextPage = () => {
         title={'Who I am and what I want to be?'}
         footer_desc={'Everything about my professional career'}
       />
-      <div className="mt-20">
+      <div className="mt-5 md:mt-20">
         <GlassBio />
       </div>
       <article className={'my-20 flex flex-col justify-between md:flex-row'}>

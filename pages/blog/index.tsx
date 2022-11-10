@@ -41,6 +41,7 @@ const blog = ({
         title={'A documentation about my life.'}
         footer_desc={'EVERYTHING I KNOW ABOUT'}
       />
+      <div className="grid grid-cols-3">
       {postItems.map((postItem: BlogCardType, idx: number) => {
         return (
           <BlogCard
@@ -49,7 +50,8 @@ const blog = ({
           ></BlogCard>
         );
       })}
-      {/* <div>{postItems[0].title}</div> */}
+
+      </div>
     </Container>
   );
 };
