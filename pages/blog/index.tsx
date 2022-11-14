@@ -44,8 +44,8 @@ const Blog = ({
       {postItems.map((postItem: BlogCardType, idx: number) => {
         return (
           <BlogCard
+            {...postItem}
             key={idx}
-            props={postItem}
           ></BlogCard>
         );
       })}

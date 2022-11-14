@@ -2,7 +2,7 @@ import { Popover, Transition } from '@headlessui/react';
 import NextLink from 'next/link';
 import { useRouter } from 'next/router';
 import ColorModeToggle from './colorModeToggle';
-import {GiHammerDrop, GiHamburgerMenu} from 'react-icons/gi';
+import { GiHammerDrop, GiHamburgerMenu } from 'react-icons/gi';
 
 interface NavItemType {
   href: string;
@@ -18,17 +18,17 @@ const Example = () => {
             <Popover.Button
               className={`
                 ${open ? '' : 'text-opacity-90'}
-                group inline-flex items-center rounded-xl w-10 h-10 bg-slate-400 px-3 py-2 text-slate-700 hover:text-opacity-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75`}
+                group inline-flex h-10 w-10 items-center rounded-xl bg-slate-400 px-3 py-2 text-slate-700 hover:text-opacity-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75`}
             >
-              <GiHamburgerMenu size="1.5em"/>
+              <GiHamburgerMenu size="1.5em" />
             </Popover.Button>
-            <Popover.Panel className="absolute z-10 mt-3 transform -translate-x-[160px] px-4 w-60">
+            <Popover.Panel className="absolute z-10 mt-3 w-60 -translate-x-[160px] transform px-4">
               <div className="flex flex-col rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 dark:bg-slate-700">
-                  <NavItem href={'/'} navTitle={'Home'} />
-                  <NavItem href={'/blog'} navTitle="Blogs" />
-                  <NavItem href={'/about'} navTitle="About Me" />
-                  <NavItem href={'/contact'} navTitle="Contact Me" />
-                  <ColorModeToggle/>
+                <NavItem href={'/'} navTitle={'Home'} />
+                <NavItem href={'/blog'} navTitle="Blogs" />
+                <NavItem href={'/about'} navTitle="About Me" />
+                <NavItem href={'/contact'} navTitle="Contact Me" />
+                <ColorModeToggle />
               </div>
             </Popover.Panel>
           </>
@@ -36,7 +36,7 @@ const Example = () => {
       </Popover>
     </div>
   );
-}
+};
 
 const NavItem = ({ href, navTitle }: NavItemType) => {
   const router = useRouter();
@@ -73,7 +73,7 @@ const NavBar = () => {
           <NavItem href={'/about'} navTitle="About Me" />
           <NavItem href={'/contact'} navTitle="Contact Me" />
         </div>
-        <Example/>
+        <Example />
         <ColorModeToggle />
       </div>
     </div>
