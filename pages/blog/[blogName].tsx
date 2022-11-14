@@ -14,7 +14,10 @@ import slugify from 'slugify';
 const BlogPage = (props: any) => {
   return (
     <Container>
-      <SerifHeader title={props.blogTitle} footer_desc={props.blogDescription}/>
+      <SerifHeader
+        title={props.blogTitle}
+        footer_desc={props.blogDescription}
+      />
       {props.content.map((block: BlogBlocks, idx: number) => {
         return <BlockRender {...block} key={idx} />;
       })}
