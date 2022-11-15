@@ -19,7 +19,7 @@ export function Container(props: any) {
   };
 
   return (
-    <div className={`min-h-screen`}>
+    <div className={`min-h-screen max-w-full`}>
       <Head>
         <title>{page_meta.title}</title>
         <meta content={page_meta.description} name="description" />
@@ -36,9 +36,7 @@ export function Container(props: any) {
       <main
         className={`mx-auto flex max-w-6xl flex-col justify-center px-10 sm:py-10`}
       >
-        <PageTransition>
-            {children}
-        </PageTransition>
+        <PageTransition>{children}</PageTransition>
         <Footer></Footer>
       </main>
     </div>

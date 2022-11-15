@@ -18,9 +18,11 @@ const BlogPage = (props: any) => {
         title={props.blogTitle}
         footer_desc={props.blogDescription}
       />
-      {props.content.map((block: BlogBlocks, idx: number) => {
-        return <BlockRender {...block} key={idx} />;
-      })}
+      <div className="my-10">
+        {props.content.map((block: BlogBlocks, idx: number) => {
+          return <BlockRender {...block} key={idx} />;
+        })}
+      </div>
     </Container>
   );
 };

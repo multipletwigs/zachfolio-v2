@@ -29,21 +29,36 @@ export interface BlogCardType {
   last_edited: string;
 }
 
-export const getBlogCardInfo = async (databaseId: string) => {
+export const getBlogCardInfo = async (
+  databaseId: string,
+  featuredOnly: boolean = false
+) => {
   // Filters a custom property which is completed/incomplete!
+
+  const baseFilter = {
+    and:[
+      {
+        property: 'Article Status',
+        select: {
+          equals: 'complete'
+        }
+      }
+    ]
+  }
+
+  if(featuredOnly){
+    baseFilter.and.push({
+      property: 'Is Featured',
+      select: {
+        equals: "Featured"
+      }
+    })
+  }
+
   const allDatabaseItems: QueryDatabaseResponse =
     await NotionClient.databases.query({
       database_id: databaseId,
-      filter: {
-        and: [
-          {
-            property: 'Article Status',
-            select: {
-              equals: 'complete'
-            }
-          }
-        ]
-      }
+      filter: baseFilter
     });
 
   const allBlogPages: PageObjectResponse[] =
@@ -109,13 +124,13 @@ export const getBlogChildren = async (blogName: string) => {
     const { type } = block as BlockObjectResponse;
     return {
       type: type,
-      content: block[type] as any,
+      content: block[type] as any
     };
   });
 
   return {
     blogContent: blogContent,
-    blogTitle: blogPage?.title as string, 
-    blogDescription: blogPage?.description as string,
+    blogTitle: blogPage?.title as string,
+    blogDescription: blogPage?.description as string
   };
 };

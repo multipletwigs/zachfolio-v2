@@ -18,11 +18,11 @@ const BlogCard = (props: BlogCardType) => {
         pathname: `/blog/${blogName}`
       }}
     >
-      <div className="transition-color flex w-[300px] flex-col rounded-xl p-3 transition-all hover:bg-slate-500/40">
+      <div className="transition-color flex w-full md:w-[350px] flex-col rounded-xl p-3 transition-all hover:bg-slate-500/40">
         <Image
           priority
-          width={300}
-          height={300}
+          width={400}
+          height={400}
           alt={props.articleCover!}
           src={props.articleCover!}
         ></Image>

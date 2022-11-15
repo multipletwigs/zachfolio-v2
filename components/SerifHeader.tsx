@@ -4,6 +4,7 @@ import {HiFire} from 'react-icons/hi';
 interface Header {
   title: string;
   footer_desc: string; 
+  left_aligned? : boolean;
 }
 
 /**
@@ -14,11 +15,11 @@ interface Header {
 
 export const SerifHeader = (prop: Header) => {
   return (
-    <header className="font-sans">
-      <h1 className="leading-1 select-none text-center font-serif text-lg pb-5 underline decoration-indigo-200 decoration-[20px] underline-offset-[-10px] [text-decoration-skip-ink:none] dark:decoration-slate-700 sm:text-4xl sm:leading-[150%] md:text-4xl md:leading-[150%]">
+    <header className={`font-sans ${prop.left_aligned ? 'text-left' : 'text-center'}`}>
+      <h1 className={`leading-1 select-none font-serif text-lg pb-5 underline decoration-indigo-200 decoration-[20px] underline-offset-[-10px] [text-decoration-skip-ink:none] dark:decoration-slate-700 sm:text-4xl sm:leading-[150%] md:text-4xl md:leading-[150%]`}>
         {prop.title}
       </h1>
-      <p className="capitalize text-center text-indigo-400 text-lg md:text-2xl">{prop.footer_desc}</p>
+      <p className="capitalize text-indigo-400 text-lg md:text-2xl">{prop.footer_desc}</p>
     </header>
   );
 };

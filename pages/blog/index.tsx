@@ -1,3 +1,4 @@
+import ArticleGrid from 'components/ArticleGrid';
 import BlogCard from 'components/blog_components/BlogCard';
 import { SerifHeader } from 'components/SerifHeader';
 import { BlogCardType, getBlogCardInfo } from 'lib/getBlogContent';import Image from 'next/image';
@@ -40,17 +41,7 @@ const Blog = ({
         title={'A documentation about my life.'}
         footer_desc={'EVERYTHING I KNOW ABOUT'}
       />
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 justify-items-center gap-y-10 mt-10">
-      {postItems.map((postItem: BlogCardType, idx: number) => {
-        return (
-          <BlogCard
-            {...postItem}
-            key={idx}
-          ></BlogCard>
-        );
-      })}
-
-      </div>
+      <ArticleGrid postItems={postItems}></ArticleGrid>
     </Container>
   );
 };

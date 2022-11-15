@@ -22,12 +22,11 @@ const Example = () => {
             >
               <GiHamburgerMenu size="1.5em" />
             </Popover.Button>
-            <Popover.Panel className="absolute z-10 mt-3 w-60 -translate-x-[160px] transform px-4">
+            <Popover.Panel className="absolute z-10 mt-3 w-60 -translate-x-[180px] transform px-4">
               <div className="flex flex-col rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 dark:bg-slate-700">
                 <NavItem href={'/'} navTitle={'Home'} />
                 <NavItem href={'/blog'} navTitle="Blogs" />
                 <NavItem href={'/about'} navTitle="About Me" />
-                <NavItem href={'/contact'} navTitle="Contact Me" />
                 <ColorModeToggle />
               </div>
             </Popover.Panel>
@@ -71,7 +70,6 @@ const NavBar = () => {
           <NavItem href={'/'} navTitle={'Home'} />
           <NavItem href={'/blog'} navTitle="Blogs" />
           <NavItem href={'/about'} navTitle="About Me" />
-          <NavItem href={'/contact'} navTitle="Contact Me" />
         </div>
         <Example />
         <ColorModeToggle />

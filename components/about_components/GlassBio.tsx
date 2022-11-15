@@ -1,8 +1,9 @@
+import { external_links } from 'components/Footer';
 import React from 'react';
 
 interface BiographyItem {
   key: string;
-  desc: string;
+  desc: any;
 }
 
 const BioGraphyItems: BiographyItem[] = [
@@ -33,6 +34,24 @@ const BioGraphyItems: BiographyItem[] = [
   {
     key: 'Fluent Languages',
     desc: 'Chinese, English, Bahasa Malaysia, Verbal Cantonese'
+  },
+  {
+    key: 'Socials',
+    desc: (
+      <div className="flex gap-5">
+        {external_links.map((link) => {
+          return (
+            <a
+              className="transition-all hover:text-cyan-300"
+              href={link.href}
+              key={link.name}
+            >
+              {link.icon}
+            </a>
+          );
+        })}
+      </div>
+    )
   }
 ];
 
