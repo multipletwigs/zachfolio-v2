@@ -86,7 +86,9 @@ const Home = ({
             I write about my experiences and what I&apos;m learning and
             creating.
           </p>
-          <FeaturedArticles children={<ArticleGrid postItems={postItems} />} />
+          <FeaturedArticles>
+            <ArticleGrid postItems={postItems} />
+          </FeaturedArticles>
         </div>
       </header>
     </Container>
