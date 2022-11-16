@@ -33,7 +33,7 @@ const aboutContent = {
   chi_name: '邝立浩',
   header: 'Everything I wanted to do in my life is to create what I want to',
   self_intro_p: self_intro,
-  tech_exp_header: 'Technical Experiences',
+  tech_exp_header: 'Recent Projects',
   tech_exp_p:
     "I have been coding for a year or two now. I've racked up a lot of rudimentary knowledge in software engineering. Be it through assignments, hackathons, personal projects or school organizations, I spend a lot of time to hone my craft. I'll mention a few highlights :)"
 };

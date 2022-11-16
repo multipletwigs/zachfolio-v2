@@ -6,11 +6,15 @@ import Link from 'next/link';
 import { GetStaticProps } from 'next/types';
 import { Client } from '@notionhq/client';
 import slugify from 'slugify';
+import Tag from 'components/Tag';
+import { create } from 'domain';
 
 const BlogCard = (props: BlogCardType) => {
   const blogName = slugify(props.title, {
     lower: true,
   }); 
+
+  const createdAt = new Date(props.date).toLocaleString();
 
   return (
     <Link
@@ -26,9 +30,12 @@ const BlogCard = (props: BlogCardType) => {
           alt={props.articleCover!}
           src={props.articleCover!}
         ></Image>
-        <p>{props.date}</p>
+        <div className="my-2">
+          <Tag content={`Created at ${createdAt}`} textColor={'text-slate-300'} bgColor={'bg-slate-700'}></Tag>
+        </div>
         <h1 className="text-lg font-bold">{props.title}</h1>
         <p>{props.description}</p>
+        <Tag content={props.articleGenre} textColor={'text-slate-300'} bgColor={'bg-slate-700'}></Tag>
       </div>
     </Link>
   );

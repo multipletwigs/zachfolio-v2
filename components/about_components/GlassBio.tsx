@@ -61,11 +61,11 @@ const GlassBio = () => {
       <h3 className="mb-3 text-xl font-bold underline underline-offset-8">
         Biography?😶
       </h3>
-      <table className="w-[100%] table-auto text-left">
+      <table className="w-[100%] text-left">
         <thead>
           <tr>
             <th className="font-mono text-lg">Key:str</th>
-            <th className="pl-10 font-mono text-lg">Value:str</th>
+            <th className="font-mono text-lg">Value:str</th>
           </tr>
         </thead>
         <tbody className="align-top">
@@ -73,7 +73,7 @@ const GlassBio = () => {
             return (
               <tr key={item.key}>
                 <td className="pt-5 font-bold">{item.key}</td>
-                <td className="pl-10 pt-5">{item.desc}</td>
+                <td className="pt-5">{item.desc}</td>
               </tr>
             );
           })}

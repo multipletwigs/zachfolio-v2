@@ -1,7 +1,9 @@
-import { Tab } from '@headlessui/react';
+import { Popover, Tab } from '@headlessui/react';
+import ColorModeToggle from 'components/colorModeToggle';
 import Tag from 'components/Tag';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useState } from 'react';
+import { GiHamburgerMenu } from 'react-icons/gi';
 
 interface TechExperienceType {
   name: string;
@@ -41,7 +43,7 @@ const TechExperience: TechExperienceType[] = [
         bgColor="bg-orange-400/30"
         textColor="text-orange-300"
         key="1"
-      />,
+      />
     ]
   },
   {
@@ -49,24 +51,44 @@ const TechExperience: TechExperienceType[] = [
     description:
       'A web application funded by the Monash School of Medicine to keep track of vaccine records mandatory for students for them to undergo their hospital shadow visits. I was responsible for Frontend Development, however I was still in training phase for the project, and before I could contribute anything significant to the project, it was handed over to the Official Monash Technology Team. I was able to learn a lot about React during this project.',
     link: 'testing',
-    stack: [<Tag
-      content="May 2022 - July 2022"
-      bgColor="bg-purple-400/30"
-      textColor="text-purple-300"
-      key="2"
-    />,]
+    stack: [
+      <Tag
+        content="May 2022 - July 2022"
+        bgColor="bg-purple-400/30"
+        textColor="text-purple-300"
+        key="2"
+      />
+    ]
   },
   {
-    name: 'Monash University', 
+    name: 'Monash University',
     description:
       'This was where my coding journey began. My degree currently states Bachelors of Computer Science in Data Science, but my academic transcripts shows that I am currently taking core units from both paths. I study software design patters, Databases, Data Structures and Algorithms, Deep Learning, Malicious AI, Cybersecurity and more, as part of my degree. Currently working on a Video Captioning DL Model for my final year project.',
     link: 'testing',
-    stack: [<Tag
-      content="October 2020 - Now (Graduating @ June 2023)"
-      bgColor="bg-orange-400/30 dark:bg-orange-400/30"
-      textColor="text-orange-700 dark:text-orange-300"
-      key="2"
-    />,]
+    stack: [
+      <Tag
+        content="October 2020 - Now"
+        bgColor="bg-orange-400/30 dark:bg-orange-400/30"
+        textColor="text-orange-700 dark:text-orange-300"
+        key="3"
+      />,
+      <Tag
+        content="Graduating @ June 2023"
+        bgColor="bg-orange-400/30 dark:bg-orange-400/30"
+        textColor="text-orange-700 dark:text-orange-300"
+        key="3"
+      />,
+      <Tag
+        content="October 2020 - Now"
+        bgColor="bg-slate-400/30 dark:bg-slate-400/30"
+        textColor="text-slate-700 dark:text-slate-300"
+        key="3"
+        link={{
+          href: 'https://www.monash.edu/',
+          name: 'Blog Write-up!'
+        }}
+      />
+    ]
   }
 ];
 
@@ -74,14 +96,14 @@ export default function WorkExpTable() {
   const [tabIndex, setTabIndex] = useState(0);
 
   return (
-    <div className="flex h-[450px] flex-col gap-5 px-2 sm:px-0 md:h-[300px] md:flex-row">
+    <div className="flex flex-col gap-5 px-2 sm:px-0 md:flex-row">
       <Tab.Group
         vertical
         selectedIndex={tabIndex}
         onChange={(index) => setTabIndex(index)}
         manual
       >
-        <Tab.List className="flex w-full flex-row gap-3 rounded-xl md:p-1 md:w-[30%] md:flex-col">
+        <Tab.List className="flex w-full flex-row gap-3 rounded-xl md:w-[30%] md:flex-col md:p-1">
           {TechExperience.map((exp) => {
             return (
               <Tab
@@ -116,14 +138,36 @@ export default function WorkExpTable() {
                   className="text-left"
                 >
                   <div className="flex flex-col justify-between md:flex-row md:items-center">
-                    <h1 className="text-2xl font-bold">{exp.name}</h1>
-                    <div className="inline-block my-2">
+                    <div className="flex items-center justify-between">
+                      <h1 className="text-2xl font-bold">{exp.name}</h1>
+                      <Popover className="relative md:hidden">
+                        {({ open }) => (
+                          <>
+                            <Popover.Button
+                              className={`
+                ${open ? '' : 'text-opacity-90'}
+                group text-slate-300 hover:text-opacity-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75`}
+                            >
+                             Tags
+                            </Popover.Button>
+                            <Popover.Panel className="absolute z-10 mt-3 w-60 -translate-x-[180px] transform px-4">
+                              <div className="flex flex-col rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 dark:bg-slate-700 gap-2 px-2 py-3">
+                                {exp.stack.map((tag) => {
+                                  return tag;
+                                })}
+                              </div>
+                            </Popover.Panel>
+                          </>
+                        )}
+                      </Popover>
+                    </div>
+                    <div className="my-2 hidden gap-1 md:visible md:flex md:flex-row">
                       {exp.stack.map((tag) => {
                         return tag;
                       })}
                     </div>
                   </div>
-                  <p className="text-justify">{exp.description}</p>
+                  <p className="mt-2 text-justify">{exp.description}</p>
                 </Tab.Panel>
               </AnimatePresence>
             );
