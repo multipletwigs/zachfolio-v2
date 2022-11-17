@@ -9,7 +9,7 @@ interface NavItemType {
   navTitle: string;
 }
 
-const Example = () => {
+const Hamburger = () => {
   return (
     <div className="max-w-sm px-4 sm:hidden">
       <Popover className="relative">
@@ -18,7 +18,7 @@ const Example = () => {
             <Popover.Button
               className={`
                 ${open ? '' : 'text-opacity-90'}
-                group inline-flex h-10 w-10 items-center rounded-xl bg-slate-400 px-3 py-2 text-slate-700 hover:text-opacity-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75`}
+                group inline-flex h-10 w-10 items-center rounded-full bg-slate-500 px-3 py-2 text-slate-700 hover:text-opacity-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75`}
             >
               <GiHamburgerMenu size="1.5em" />
             </Popover.Button>
@@ -64,14 +64,14 @@ const NavItem = ({ href, navTitle }: NavItemType) => {
 const NavBar = () => {
   return (
     <div className={'relative'}>
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-10 py-10">
+      <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-10 md:px-10">
         <div className="font-bold">zachfolio</div>
         <div className="invisible sm:visible sm:space-x-10">
           <NavItem href={'/'} navTitle={'Home'} />
           <NavItem href={'/blog'} navTitle="Blogs" />
           <NavItem href={'/about'} navTitle="About Me" />
         </div>
-        <Example />
+        <Hamburger />
         <ColorModeToggle />
       </div>
     </div>

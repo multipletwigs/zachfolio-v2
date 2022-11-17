@@ -4,10 +4,25 @@ import Footer from 'components/Footer';
 import NavBar from 'components/NavBar';
 import { siteMetaData } from 'data/siteMetadata';
 import { PageTransition } from 'components/PageTransition';
+import { useEffect, useState } from 'react';
+import { BlogCardType, getBlogCardInfo } from 'lib/getBlogContent';
+import { useQuery } from '@tanstack/react-query';
+import ArticleGrid from 'components/ArticleGrid';
+import FeaturedArticles from 'components/FeaturedArticles';
+import useSWR from 'swr';
 
 export function Container(props: any) {
   const { children, ...customMeta } = props;
+  const [featuredBlogs, setFeaturedBlogs] = useState<BlogCardType[]>([]);
   const router = useRouter();
+
+  // const {data, error} = useSWR()
+
+  // const { isLoading, error, data } = useQuery({
+  //   queryKey: ['featuredBlogs'],
+  //   queryFn: () =>
+  //     getBlogCardInfo(process.env.NOTION_BLOG_DB_ID as string, true)
+  // });
 
   // Each page will have a head element, meta tags are really important for SEO
   const page_meta = {
@@ -17,6 +32,12 @@ export function Container(props: any) {
     date: null,
     ...customMeta
   };
+
+  // useEffect(() => {
+  //   if (data) {
+  //     setFeaturedBlogs(data);
+  //   }
+  // }, [data]);
 
   return (
     <div className={`min-h-screen max-w-full`}>
@@ -34,10 +55,10 @@ export function Container(props: any) {
       </Head>
       <NavBar />
       <main
-        className={`mx-auto flex max-w-6xl flex-col justify-center px-10 sm:py-10`}
+        className={`mx-auto flex max-w-6xl flex-col justify-center px-5 sm:py-10 md:px-10`}
       >
         <PageTransition>{children}</PageTransition>
-        <Footer></Footer>
+        <Footer/>
       </main>
     </div>
   );

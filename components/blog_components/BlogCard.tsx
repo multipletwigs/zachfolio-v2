@@ -8,13 +8,21 @@ import { Client } from '@notionhq/client';
 import slugify from 'slugify';
 import Tag from 'components/Tag';
 import { create } from 'domain';
+import { siteMetaData } from 'data/siteMetadata';
 
 const BlogCard = (props: BlogCardType) => {
   const blogName = slugify(props.title, {
-    lower: true,
-  }); 
+    lower: true
+  });
 
-  const createdAt = new Date(props.date).toLocaleString();
+  const createdAt = new Date(props.date).toLocaleDateString(
+    siteMetaData.locale,
+    {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric'
+    }
+  );
 
   return (
     <Link
@@ -22,7 +30,7 @@ const BlogCard = (props: BlogCardType) => {
         pathname: `/blog/${blogName}`
       }}
     >
-      <div className="transition-color flex w-full md:w-[350px] flex-col rounded-xl p-3 transition-all hover:bg-slate-500/40">
+      <div className="transition-color flex w-full flex-col rounded-xl p-3 transition-all hover:bg-slate-500/40 md:w-[350px]">
         <Image
           priority
           width={400}
@@ -31,15 +39,17 @@ const BlogCard = (props: BlogCardType) => {
           src={props.articleCover!}
         ></Image>
         <div className="my-2">
-          <Tag content={`Created at ${createdAt}`} textColor={'text-slate-300'} bgColor={'bg-slate-700'}></Tag>
+          <Tag
+            content={`Published on ${createdAt}`}
+            textColor={'text-teal-400'}
+            bgColor={'bg-teal-700/30'}
+          ></Tag>
         </div>
         <h1 className="text-lg font-bold">{props.title}</h1>
         <p>{props.description}</p>
-        <Tag content={props.articleGenre} textColor={'text-slate-300'} bgColor={'bg-slate-700'}></Tag>
       </div>
     </Link>
   );
 };
 
 export default BlogCard;
-

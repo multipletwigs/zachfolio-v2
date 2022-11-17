@@ -21,7 +21,7 @@ const Tag = (tagProps: TagProps) => {
         // see https://mathiasbynens.github.io/rel-noopener/#recommendations
         <a href={tagProps.link.href} target="_blank" rel="noreferrer">
           <span
-            className={`${tagProps.textColor} ${tagProps.bgColor} flex w-[fit-content] items-center gap-1 rounded-md px-3 py-1 text-center text-sm font-bold shadow-lg hover:underline`}
+            className={`${tagProps.textColor} ${tagProps.bgColor} flex w-[fit-content] items-center gap-1 rounded-md px-3 py-1 text-center text-sm font-bold hover:underline`}
           >
             <FiExternalLink />
             {tagProps.link.name}
@@ -29,7 +29,7 @@ const Tag = (tagProps: TagProps) => {
         </a>
       ) : (
         <span
-          className={`${tagProps.textColor} ${tagProps.bgColor} w-[fit-content] rounded-md px-3 py-1 text-center text-sm font-bold shadow-lg`}
+          className={`${tagProps.textColor} ${tagProps.bgColor} w-[fit-content] rounded-md px-3 py-1 text-center text-sm font-bold`}
         >
           {tagProps.content}
         </span>
