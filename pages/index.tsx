@@ -78,7 +78,7 @@ const Home = ({
             </button>
           </div>
         </hgroup>
-        <div className="my-20">
+        <div className="mt-20">
           <h1 className="w-[90%] text-2xl font-bold md:text-4xl">
             Check out my latest articles
           </h1>

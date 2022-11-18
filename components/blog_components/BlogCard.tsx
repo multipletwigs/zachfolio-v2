@@ -1,13 +1,9 @@
 import React from 'react';
 import { BlogCardType } from 'lib/getBlogContent';
 import Image from 'next/image';
-import { useRouter } from 'next/router';
 import Link from 'next/link';
-import { GetStaticProps } from 'next/types';
-import { Client } from '@notionhq/client';
 import slugify from 'slugify';
 import Tag from 'components/Tag';
-import { create } from 'domain';
 import { siteMetaData } from 'data/siteMetadata';
 
 const BlogCard = (props: BlogCardType) => {
@@ -41,8 +37,8 @@ const BlogCard = (props: BlogCardType) => {
         <div className="my-2">
           <Tag
             content={`Published on ${createdAt}`}
-            textColor={'text-teal-400'}
-            bgColor={'bg-teal-700/30'}
+            textColor={'text-blue-700 dark:text-teal-400'}
+            bgColor={'bg-blue-400/30 dark:bg-teal-700/30'}
           ></Tag>
         </div>
         <h1 className="text-lg font-bold">{props.title}</h1>
