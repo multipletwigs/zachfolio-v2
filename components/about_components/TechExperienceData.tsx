@@ -16,14 +16,8 @@ export const TechExperience: TechExperienceType[] = [
     stack: [
       <Tag
         content="November 2021 - Now"
-        bgColor={{
-          light: 'bg-slate-100',
-          dark: 'dark:bg-orange-400/30'
-        }}
-        textColor={{
-          light: 'text-slate-500',
-          dark: 'dark:text-orange-400'
-        }}
+        bgColor="bg-orange-300/40 dark:bg-orange-400/30"
+        textColor="text-orange-700 dark:text-orange-300"
         key="1"
       />
     ]
@@ -36,8 +30,8 @@ export const TechExperience: TechExperienceType[] = [
     stack: [
       <Tag
         content="May 2022 - July 2022"
-        bgColor="bg-purple-400/30"
-        textColor="text-purple-300"
+        bgColor="bg-purple-300/40 dark:bg-purple-400/30"
+        textColor="text-purple-700 dark:text-purple-300"
         key="2"
       />
     ]

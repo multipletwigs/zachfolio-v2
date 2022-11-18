@@ -74,7 +74,7 @@ const about: NextPage = () => {
           </figure>
         </header>
         <aside className="flex flex-col md:w-[60%]">
-          <h1 className="mt-5 text-left text-2xl text-teal-400 md:mt-0 md:text-right md:text-3xl">
+          <h1 className="mt-5 text-left text-2xl font-semibold text-rose-400 dark:text-teal-400 md:mt-0 md:text-right md:text-3xl">
             {aboutContent.header}
           </h1>
           {aboutContent.self_intro_p}
@@ -82,10 +82,16 @@ const about: NextPage = () => {
       </article>
       <section>
         <header className="mb-10">
-          <h2 className={'text-2xl text-teal-400 md:text-3xl'}>
+          <h2
+            className={
+              'text-2xl font-semibold text-rose-400 dark:text-teal-400 md:text-3xl'
+            }
+          >
             {aboutContent.tech_exp_header}
           </h2>
-          <p className="text-lg text-justify dark:text-slate-200">{aboutContent.tech_exp_p}</p>
+          <p className="text-justify text-lg dark:text-slate-200">
+            {aboutContent.tech_exp_p}
+          </p>
         </header>
         <WorkExpTable />
       </section>

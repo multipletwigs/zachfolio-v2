@@ -41,8 +41,8 @@ export default function WorkExpTable() {
                 key={exp.name}
                 className={({ selected }) =>
                   `w-full rounded-xl p-3 text-center ${
-                    selected ? 'bg-slate-50/10' : 'bg-slate-50/5'
-                  }`
+                    selected ? 'bg-slate-300 dark:bg-slate-50/10' : 'bg-slate-200 dark:bg-slate-50/5'
+                  } outline-none`
                 }
               >
                 {exp.name}
