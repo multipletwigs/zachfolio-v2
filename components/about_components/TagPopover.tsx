@@ -16,7 +16,7 @@ export const TagPopover = ({ exp }: { exp: TechExperienceType }) => {
             </Popover.Button>
           <Popover.Panel className="absolute z-10 mt-3 w-60 -translate-x-[180px] transform px-4">
             <div className="flex flex-col gap-2 rounded-lg px-2 py-3 shadow-lg ring-1 ring-black ring-opacity-5 bg-slate-200  dark:bg-slate-700">
-                Related Tags
+                <div className="font-bold pl-1 text-slate-900">Project Info</div>
               {exp.stack.map((tag) => {
                 return tag;
               })}
