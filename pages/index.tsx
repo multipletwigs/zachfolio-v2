@@ -56,8 +56,8 @@ const Home = ({
             Monash University.
           </h1>
           <p className="mt-5 w-[80%] text-lg font-medium sm:w-[80%] md:w-[80%] md:text-xl">
-            An aspiring Software Developer and UI Designer. Making your software
-            look lively and wonderful, and dangerously practical.
+            An aspiring Software Engineer and UI Designer. Making your software
+            look lively and wonderful, and dangerously practical. I'll create anything you possibly need.
           </p>
           <div className="flex gap-5 py-5">
             <button
