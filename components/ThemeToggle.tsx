@@ -9,7 +9,7 @@ export const ThemeToggle = () => {
 
   useEffect(() => {
     setMounted(true);
-  });
+  }, [setMounted]);
 
   // remember to fix navbar as a clickable popup
   return (

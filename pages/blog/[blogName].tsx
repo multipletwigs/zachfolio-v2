@@ -2,6 +2,8 @@ import BlockRender, {
   BlogBlocks
 } from 'components/blog_components/BlockRender';
 import { SerifHeader } from 'components/SerifHeader';
+import Tag from 'components/Tag';
+import { siteMetaData } from 'data/siteMetadata';
 import { Container } from 'layouts/Container';
 import {
   BlogCardType,
@@ -11,6 +13,14 @@ import {
 import { GetStaticProps } from 'next/types';
 import slugify from 'slugify';
 
+export const formatDate = (date: string) => {
+  return new Date(date).toLocaleDateString(siteMetaData.locale, {
+    year: 'numeric',
+    month: 'short',
+    day: 'numeric'
+  });
+};
+
 const BlogPage = (props: any) => {
   return (
     <Container>
@@ -18,6 +28,15 @@ const BlogPage = (props: any) => {
         title={props.blogTitle}
         footer_desc={props.blogDescription}
       />
+      <div className="mt-5 inline-flex w-[100%] flex-col items-center">
+        <Tag
+          content={`Edited @ ${formatDate(
+            props.blogUpdatedAt
+          )} | Written @ ${formatDate(props.blogPublishedAt)}`}
+          textColor={'text-blue-700 dark:text-indigo-300'}
+          bgColor={'bg-blue-400/30 dark:bg-indigo-700/30'}
+        ></Tag>
+      </div>
       <div className="my-10">
         {props.content.map((block: BlogBlocks, idx: number) => {
           return <BlockRender {...block} key={idx} />;
@@ -58,7 +77,9 @@ export const getStaticProps: GetStaticProps = async (context) => {
     props: {
       content: pageContent.blogContent,
       blogTitle: pageContent.blogTitle,
-      blogDescription: pageContent.blogDescription
+      blogDescription: pageContent.blogDescription,
+      blogPublishedAt: pageContent.blogPublishedDate,
+      blogUpdatedAt: pageContent.blogUpdatedDate
     }
   };
 };

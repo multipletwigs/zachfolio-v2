@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Extra utility classes are added to style the scrollbar */
 @layer utilities {
     .scrollbar::-webkit-scrollbar {
       width: 10px;
@@ -13,7 +14,7 @@
     }
   
     .scrollbar::-webkit-scrollbar-thumb {
-      background: #3c3662;
+      background: #575370;
       border-radius: 100vh;
     }
   }

@@ -131,6 +131,8 @@ export const getBlogChildren = async (blogName: string) => {
   return {
     blogContent: blogContent,
     blogTitle: blogPage?.title as string,
-    blogDescription: blogPage?.description as string
+    blogDescription: blogPage?.description as string,
+    blogPublishedDate: blogPage?.date as string,
+    blogUpdatedDate: blogPage?.last_edited as string
   };
 };

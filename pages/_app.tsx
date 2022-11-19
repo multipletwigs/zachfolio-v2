@@ -1,21 +1,13 @@
-import '../styles/globals.css'
-import type { AppProps } from 'next/app'
-import { ThemeProvider } from 'next-themes'
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-
-/**
- * This is for tanstack react query. 
- * It is a library that is used to cache data from the notion api. This is used to fetch featured blog information.
- */
-const queryClient = new QueryClient(); 
+import '../styles/globals.css';
+import type { AppProps } from 'next/app';
+import { ThemeProvider } from 'next-themes';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-  <ThemeProvider attribute="class" defaultTheme='dark' enableSystem={false}>
-    <QueryClientProvider client={queryClient}>
+    <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
       <Component {...pageProps} />
-    </QueryClientProvider>
-  </ThemeProvider>)
+    </ThemeProvider>
+  );
 }
 
-export default MyApp
+export default MyApp;

@@ -4,8 +4,6 @@ import { Container } from '../layouts/Container';
 import Image from 'next/future/image';
 import { useRouter } from 'next/router';
 import { BlogCardType, getBlogCardInfo } from 'lib/getBlogContent';
-import BlogCard from 'components/blog_components/BlogCard';
-import GlassBio from 'components/about_components/GlassBio';
 import ArticleGrid from 'components/ArticleGrid';
 import FeaturedArticles from 'components/FeaturedArticles';
 
@@ -57,7 +55,7 @@ const Home = ({
           </h1>
           <p className="mt-5 w-[80%] text-lg font-medium sm:w-[80%] md:w-[80%] md:text-xl">
             An aspiring Software Engineer and UI Designer. Making your software
-            look lively and wonderful, and dangerously practical. I'll create anything you possibly need.
+            look lively and wonderful, and dangerously practical. I&apos;ll create anything you possibly need.
           </p>
           <div className="flex gap-5 py-5">
             <button
@@ -80,7 +78,7 @@ const Home = ({
         </hgroup>
         <div className="mt-20">
           <h1 className="w-[90%] text-2xl font-bold md:text-4xl">
-            Check out my latest articles
+            Check out my featured articles!
           </h1>
           <p className="mt-5 w-[80%] text-lg font-medium sm:w-[80%] md:w-[80%] md:text-xl">
             I write about my experiences and what I&apos;m learning and
