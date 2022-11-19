@@ -4,12 +4,8 @@ import Footer from 'components/Footer';
 import NavBar from 'components/NavBar';
 import { siteMetaData } from 'data/siteMetadata';
 import { PageTransition } from 'components/PageTransition';
-import { useEffect, useState } from 'react';
-import { BlogCardType, getBlogCardInfo } from 'lib/getBlogContent';
-import { useQuery } from '@tanstack/react-query';
-import ArticleGrid from 'components/ArticleGrid';
-import FeaturedArticles from 'components/FeaturedArticles';
-import useSWR from 'swr';
+import { useState } from 'react';
+import { BlogCardType } from 'lib/getBlogContent';
 
 export function Container(props: any) {
   const { children, ...customMeta } = props;
