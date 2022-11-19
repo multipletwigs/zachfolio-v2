@@ -80,6 +80,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
       blogDescription: pageContent.blogDescription,
       blogPublishedAt: pageContent.blogPublishedDate,
       blogUpdatedAt: pageContent.blogUpdatedDate
-    }
+    },
+    revalidate: 30
   };
 };
