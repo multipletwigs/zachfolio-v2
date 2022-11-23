@@ -8,18 +8,9 @@ export default function handler(req: NextRequest, res: NextResponse) {
     return new ImageResponse(
       (
         <div
-          style={{
-            fontSize: 128,
-            background: 'white',
-            width: '100%',
-            height: '100%',
-            display: 'flex',
-            textAlign: 'center',
-            alignItems: 'center',
-            justifyContent: 'center'
-          }}
+          className="w-full h-full flex align-center justify-items-center"
         >
-          Hello world!
+          <p>Hello world, this is on twitter</p>
         </div>
       ),
       {
