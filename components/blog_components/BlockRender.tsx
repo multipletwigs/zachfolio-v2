@@ -86,12 +86,20 @@ const BlockRender = (props: BlogBlocks) => {
         );
       case 'image':
         const imageSrc = props.content.file.url;
-        const imageAlt = props.content.caption ? props.content.caption[0].plain_text : 'Image describing blog';
-        return <img src={imageSrc} className="mx-auto rounded-lg my-5" alt={imageAlt} />;
+        const imageAlt = props.content.caption
+          ? props.content.caption[0].plain_text
+          : 'Image describing blog';
+        return (
+          <img
+            src={imageSrc}
+            className="mx-auto my-5 rounded-lg"
+            alt={imageAlt}
+          />
+        );
       case 'code':
         const codeText = props.content.rich_text[0].plain_text;
         return (
-          <>
+          <div className="my-5">
             <div
               className={
                 'inline-block border-b border-b-slate-400 bg-slate-300/30 px-5 py-1 font-mono dark:border-b-orange-400 dark:bg-slate-900'
@@ -106,7 +114,11 @@ const BlockRender = (props: BlogBlocks) => {
               language={props.content.language}
             >
               {({ tokens, getLineProps, getTokenProps }) => (
-                <pre className={'bg-slate-300/30 p-5 dark:bg-slate-900'}>
+                <pre
+                  className={
+                    'scrollbar overflow-x-scroll bg-slate-300/30 p-5 dark:bg-slate-900'
+                  }
+                >
                   {tokens.map((line, i) => (
                     <div key={i} {...getLineProps({ line, key: i })}>
                       {line.map((token, key) => (
@@ -117,7 +129,7 @@ const BlockRender = (props: BlogBlocks) => {
                 </pre>
               )}
             </Highlight>
-          </>
+          </div>
         );
       default:
         return <p>Block Unrecognized</p>;

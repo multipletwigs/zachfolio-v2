@@ -1,6 +1,7 @@
 import ArticleGrid from 'components/ArticleGrid';
 import BlogCard from 'components/blog_components/BlogCard';
 import { SerifHeader } from 'components/SerifHeader';
+import { siteMetaData } from 'data/siteMetadata';
 import { BlogCardType, getBlogCardInfo } from 'lib/getBlogContent';import Image from 'next/image';
 import { InferGetStaticPropsType } from 'next/types';
 import React from 'react';
@@ -34,8 +35,15 @@ export async function getStaticProps() {
 const Blog = ({
   postItems
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
+  const blogMeta = {
+    ...siteMetaData, 
+    title: 'Zach Khong | Blog',
+    headerTitle: "Zach's Blog", 
+    description: 'A blog about my journey as a software engineer and my thoughts on tech.',
+    siteUrl: "https://zachkhong.com/blog"
+  }
   return (
-    <Container>
+    <Container customMeta={blogMeta}>
       <SerifHeader
         title={'A documentation about my life.'}
         footer_desc={'EVERYTHING I KNOW ABOUT'}

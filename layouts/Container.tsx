@@ -9,23 +9,12 @@ import { BlogCardType } from 'lib/getBlogContent';
 
 export function Container(props: any) {
   const { children, ...customMeta } = props;
-  const [featuredBlogs, setFeaturedBlogs] = useState<BlogCardType[]>([]);
   const router = useRouter();
-
-  // const {data, error} = useSWR()
-
-  // const { isLoading, error, data } = useQuery({
-  //   queryKey: ['featuredBlogs'],
-  //   queryFn: () =>
-  //     getBlogCardInfo(process.env.NOTION_BLOG_DB_ID as string, true)
-  // });
 
   // Each page will have a head element, meta tags are really important for SEO
   const page_meta = {
-    title: siteMetaData.title,
-    description: siteMetaData.description,
-    githubHandle: siteMetaData.githubHandle,
-    date: null,
+    title: props.customMeta?.title || siteMetaData.title,
+    description: props.customMeta?.description || siteMetaData.description,
     ...customMeta
   };
 
@@ -40,21 +29,24 @@ export function Container(props: any) {
       <Head>
         <title>{page_meta.title}</title>
         <meta content={page_meta.description} name="description" />
+        {/* Was having issues with google security */}
         <meta
           name="google-site-verification"
           content="xzeYzuuxCS2qLIB-dqzoCdFT-Xm-QLT_Msl8ozh5944"
         />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta
           property="og:url"
           content={`${siteMetaData.siteUrl}${router.asPath}`}
         />
+        <meta property="twitter:image" content="https://zachkhong.vercel.app/api/imageOg"></meta>
       </Head>
       <NavBar />
       <main
         className={`mx-auto flex max-w-6xl flex-col justify-center px-5 sm:py-10 md:px-10`}
       >
         <PageTransition>{children}</PageTransition>
-        <Footer/>
+        <Footer />
       </main>
     </div>
   );

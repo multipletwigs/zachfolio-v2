@@ -3,7 +3,7 @@ import BlockRender, {
 } from 'components/blog_components/BlockRender';
 import { SerifHeader } from 'components/SerifHeader';
 import Tag from 'components/Tag';
-import { siteMetaData } from 'data/siteMetadata';
+import { MetaTypes, siteMetaData } from 'data/siteMetadata';
 import { Container } from 'layouts/Container';
 import {
   BlogCardType,
@@ -22,8 +22,15 @@ export const formatDate = (date: string) => {
 };
 
 const BlogPage = (props: any) => {
+  
+  const blogMeta: MetaTypes = {
+    ...siteMetaData,
+    title: `Zach Khong | ${props.blogTitle}`, 
+    description: props.blogMetaDesc,
+  }
+
   return (
-    <Container>
+    <Container customMeta={blogMeta}>
       <SerifHeader
         title={props.blogTitle}
         footer_desc={props.blogDescription}
@@ -78,6 +85,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
       content: pageContent.blogContent,
       blogTitle: pageContent.blogTitle,
       blogDescription: pageContent.blogDescription,
+      blogMetaDesc: pageContent.blogMetaDesc,
       blogPublishedAt: pageContent.blogPublishedDate,
       blogUpdatedAt: pageContent.blogUpdatedDate
     },

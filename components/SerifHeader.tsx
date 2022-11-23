@@ -1,5 +1,4 @@
 import React from 'react';
-import { HiFire } from 'react-icons/hi';
 
 interface Header {
   title: string;
