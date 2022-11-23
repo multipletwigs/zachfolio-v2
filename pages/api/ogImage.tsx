@@ -1,10 +1,6 @@
 import { ImageResponse } from '@vercel/og';
 import { NextRequest, NextResponse } from 'next/server';
 
-export const config = {
-  runtime: 'experimental-edge'
-};
-
 export default function handler(req: NextRequest, res: NextResponse) {
   try {
 
@@ -35,3 +31,7 @@ export default function handler(req: NextRequest, res: NextResponse) {
     return new Response('Failed to generte image', { status: 500 });
   }
 }
+
+export const config = {
+  runtime: 'experimental-edge'
+};
