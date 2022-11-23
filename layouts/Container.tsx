@@ -40,7 +40,8 @@ export function Container(props: any) {
           content={`${siteMetaData.siteUrl}${router.asPath}`}
         />
         {/* Twitter is a bit special, for twitter:image to work, give the meta tag a NAME property instead of PROPERTY property */}
-        <meta name="twitter:card" content="https://zachkhong.vercel.app/api/ogImage"></meta>
+        <meta name="twitter:card" content="summary"></meta>
+        <meta name="twitter:image" content="https://zachkhong.vercel.app/api/ogImage"></meta>
       </Head>
       <NavBar />
       <main
