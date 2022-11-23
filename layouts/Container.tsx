@@ -39,7 +39,7 @@ export function Container(props: any) {
           property="og:url"
           content={`${siteMetaData.siteUrl}${router.asPath}`}
         />
-        <meta property="twitter:image" content="https://zachkhong.vercel.app/api/imageOg"></meta>
+        <meta property="twitter:image" content="https://zachkhong.vercel.app/api/ogImage"></meta>
       </Head>
       <NavBar />
       <main
