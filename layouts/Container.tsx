@@ -54,7 +54,7 @@ export function Container(props: any) {
         <meta name="twitter:description" content="View the album on Flickr." />
         <meta
           name="twitter:image"
-          content="https://farm6.staticflickr.com/5510/14338202952_93595258ff_z.jpg"
+          content="https://zachkhong.vercel.app/api/imageOg"
         />
       </Head>
       <NavBar />
