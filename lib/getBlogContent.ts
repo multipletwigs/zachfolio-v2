@@ -13,6 +13,7 @@ import { NotionClient } from './notion';
 interface NotionBlogProperty {
   Name: any;
   Description: any;
+  MetaDesc: any; 
   'Article Genre': any;
 }
 
@@ -23,6 +24,7 @@ export interface BlogCardType {
   pageId: string;
   title: string;
   description: string;
+  metaDesc: string;
   articleGenre: string;
   articleCover?: string | null;
   date: string;
@@ -78,12 +80,15 @@ export const getBlogCardInfo = async (
 
       // From the property object, since the key is the name of the property
       const pageProperties = page.properties as any as NotionBlogProperty;
-      const { Name, Description } = pageProperties;
+      const { Name, Description, MetaDesc } = pageProperties;
 
       // Just in case I forget about the description. This is not done for the page title because the you must have a title for notion to create a page for you.
       const articleDesc = Description.rich_text[0]
         ? Description.rich_text[0].plain_text
         : 'No Description';
+
+      // Just in case I forget about meta description
+      const articleMetaDesc = MetaDesc.rich_text[0] ? MetaDesc.rich_text[0].plain_text : "No meta tag";
 
       // The actual content that is needed is deeply nested within
       // Cannot transform created_time to date as it is non-serializable
@@ -92,6 +97,7 @@ export const getBlogCardInfo = async (
         pageId: page.id,
         title: Name['title'][0].plain_text,
         description: articleDesc,
+        metaDesc: articleMetaDesc,
         articleGenre: pageProperties['Article Genre']['select']['name'],
         articleCover: externalImage,
         date: created_time,
@@ -132,6 +138,7 @@ export const getBlogChildren = async (blogName: string) => {
     blogContent: blogContent,
     blogTitle: blogPage?.title as string,
     blogDescription: blogPage?.description as string,
+    blogMetaDesc: blogPage?.metaDesc as string,
     blogPublishedDate: blogPage?.date as string,
     blogUpdatedDate: blogPage?.last_edited as string
   };

@@ -10,6 +10,7 @@
     "@headlessui/react": "^1.7.3",
     "@heroicons/react": "^2.0.12",
     "@notionhq/client": "^2.2.1",
+    "@vercel/og": "^0.0.21",
     "eslint": "^8.26.0",
     "framer-motion": "^7.6.2",
     "next": "latest",

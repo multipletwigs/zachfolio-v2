@@ -1,10 +1,27 @@
-export const siteMetaData = {
+export interface MetaTypes {
+    title: string;
+    author: string;
+    description: string;
+    headerTitle: string;
+    language: string 
+    siteUrl: string 
+    siteRepo: string 
+    avatarImage: string 
+    avatarImage_2: string 
+    email: string 
+    github: string
+    githubHandle: string 
+    linkedin: string 
+    resume: string 
+    locale: string
+}
+
+export const siteMetaData: MetaTypes = {
     title: 'Zach Khong - Student, full-stack developer, lifelong learner.',
     author: 'Zach Khong', 
     headerTitle: "Zach Khong's Portfolio", 
     description: "Hi, I'm Zach Khong. I'm a developer, and student at Monash University.",
-    desc_footer: "I love to create, hopefully, one day create something amazing for myself and the world.",
-    language: 'en-us',
+    language: 'en-MY',
     siteUrl: 'https://zachfolio.info', 
     siteRepo: "",
     avatarImage: "/static/zach_khong.jpg", 
