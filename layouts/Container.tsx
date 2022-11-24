@@ -17,7 +17,7 @@ const ImageOG = ({
   url: string;
 }) => {
   return (
-    <>
+    <Head>
       {/* Twitter OG */}
       <meta name="twitter:card" content="summary" />
       <meta name="twitter:site" content="@multipletwigs" />
@@ -38,7 +38,7 @@ const ImageOG = ({
       <meta property="og:image" content={image} />
       <meta property="og:description" content={description} />
       <meta property="og:url" content={url} />
-    </>
+    </Head>
   );
 };
 
@@ -64,13 +64,13 @@ export function Container(props: any) {
           content="xzeYzuuxCS2qLIB-dqzoCdFT-Xm-QLT_Msl8ozh5944"
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <ImageOG
-          title={page_meta.title}
-          description={page_meta.description}
-          image={`${siteMetaData.siteUrl}/api/ogImage`}
-          url={`${siteMetaData.siteUrl}${router.asPath}`}
-        />
       </Head>
+      <ImageOG
+        title={page_meta.title}
+        description={page_meta.description}
+        image={`${siteMetaData.siteUrl}/api/ogImage`}
+        url={`${siteMetaData.siteUrl}${router.asPath}`}
+      />
       <NavBar />
       <main
         className={`mx-auto flex max-w-6xl flex-col justify-center px-5 sm:py-10 md:px-10`}
