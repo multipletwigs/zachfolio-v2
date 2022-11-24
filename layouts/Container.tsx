@@ -4,8 +4,43 @@ import Footer from 'components/Footer';
 import NavBar from 'components/NavBar';
 import { siteMetaData } from 'data/siteMetadata';
 import { PageTransition } from 'components/PageTransition';
-import { useState } from 'react';
-import { BlogCardType } from 'lib/getBlogContent';
+
+const ImageOG = ({
+  title,
+  description,
+  image,
+  url
+}: {
+  title: string;
+  description: string;
+  image: string;
+  url: string;
+}) => {
+  return (
+    <>
+      {/* Twitter OG */}
+      <meta name="twitter:card" content="summary" />
+      <meta name="twitter:site" content="@multipletwigs" />
+      <meta name="twitter:title" content={title} />
+      <meta name="twitter:description" content={description} />
+      <meta name="twitter:image" content={image} />
+      <meta name="twitter:url" content={url} />
+
+      {/* Facebook OG */}
+      <meta property="og:url" content={url} />
+      <meta property="og:type" content="website" />
+      <meta property="og:title" content={title} />
+      <meta property="og:description" content={description} />
+      <meta property="og:image" content={image} />
+
+      {/* LinkedIn OG */}
+      <meta property="og:title" content={title} />
+      <meta property="og:image" content={image} />
+      <meta property="og:description" content={description} />
+      <meta property="og:url" content={url} />
+    </>
+  );
+};
 
 export function Container(props: any) {
   const { children, ...customMeta } = props;
@@ -18,12 +53,6 @@ export function Container(props: any) {
     ...customMeta
   };
 
-  // useEffect(() => {
-  //   if (data) {
-  //     setFeaturedBlogs(data);
-  //   }
-  // }, [data]);
-
   return (
     <div className={`min-h-screen max-w-full`}>
       <Head>
@@ -35,21 +64,11 @@ export function Container(props: any) {
           content="xzeYzuuxCS2qLIB-dqzoCdFT-Xm-QLT_Msl8ozh5944"
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta
-          property="og:url"
-          content={`${siteMetaData.siteUrl}${router.asPath}`}
-        />
-        {/* Twitter is a bit special, for twitter:image to work, give the meta tag a NAME property instead of PROPERTY property */}
-        <meta name="twitter:card" content="summary" />
-        <meta name="twitter:site" content="@zachkhong" />
-        <meta
-          name="twitter:title"
-          content={page_meta.title}
-        />
-        <meta name="twitter:description" content={page_meta.description} />
-        <meta
-          name="twitter:image"
-          content="https://zachkhong.vercel.app/api/ogImage"
+        <ImageOG
+          title={page_meta.title}
+          description={page_meta.description}
+          image={`${siteMetaData.siteUrl}/api/ogImage`}
+          url={`${siteMetaData.siteUrl}${router.asPath}`}
         />
       </Head>
       <NavBar />
