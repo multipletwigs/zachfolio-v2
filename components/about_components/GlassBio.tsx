@@ -1,4 +1,5 @@
 import { external_links } from 'components/Footer';
+import Tag from 'components/Tag';
 import React from 'react';
 
 interface BiographyItem {
@@ -51,6 +52,20 @@ const BioGraphyItems: BiographyItem[] = [
           );
         })}
       </div>
+    )
+  },
+  {
+    key: 'Resume Download',
+    desc: (
+      <Tag
+        content={'View Resume Here!'}
+        textColor={'text-blue-700 dark:text-teal-400'}
+        bgColor={'bg-blue-400/30 dark:bg-teal-700/30'}
+        link={{
+          href: '/static/resume.pdf',
+          name: 'View my resume here!'
+        }}
+      ></Tag>
     )
   }
 ];
