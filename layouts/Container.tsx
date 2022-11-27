@@ -68,7 +68,7 @@ export function Container(props: any) {
       <ImageOG
         title={page_meta.title}
         description={page_meta.description}
-        image={`/static/images/og_image.png`}
+        image={`/static/images/imageOg.png`}
         url={`${siteMetaData.siteUrl}${router.asPath}`}
       />
       <NavBar />
