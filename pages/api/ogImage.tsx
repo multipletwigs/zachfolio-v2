@@ -1,8 +1,12 @@
 import { ImageResponse } from '@vercel/og';
-import { NextRequest, NextResponse } from 'next/server';
+import { NextApiRequest, NextApiResponse } from 'next';
+import { NextRequest } from 'next/server';
 
-export default function handler(req: NextRequest, res: NextResponse) {
+export default function handler(req: NextRequest, res: NextApiResponse) {
   try {
+    const pageTitle = req.nextUrl.searchParams.get('pageTitle');
+    const pageType = req.nextUrl.searchParams.get('pageType');
+
     return new ImageResponse(
       (
         // It important that this div is present.
@@ -10,42 +14,54 @@ export default function handler(req: NextRequest, res: NextResponse) {
         // This outer div needs inline styling, while the inner divs can be styled with Tailwind.
         <div
           style={{
+            display: 'flex',
             height: '100%',
             width: '100%',
-            display: 'flex',
-            flexDirection: 'column',
             alignItems: 'center',
-            backgroundColor: 'white'
+            letterSpacing: '-.02em',
+            fontWeight: 650,
+            background: 'linear-gradient(to right, #aa4b6b, #6b6b83, #3b8d99)'
           }}
         >
-          <div tw="bg-gray-50 flex">
-            <div tw="flex flex-col md:flex-row w-full py-12 px-4 md:items-center justify-between p-8">
-              <h2 tw="flex flex-col text-3xl sm:text-4xl font-bold tracking-tight text-gray-900 text-left">
-                <span>Ready to dive in?</span>
-                <span tw="text-indigo-600">Start your free trial today.</span>
-              </h2>
-              <div tw="mt-8 flex md:mt-0">
-                <div tw="flex rounded-md shadow">
-                  <a
-                    href="#"
-                    tw="flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-5 py-3 text-base font-medium text-white"
-                  >
-                    Get started
-                  </a>
-                </div>
-                <div tw="ml-3 flex rounded-md shadow">
-                  <a
-                    href="#"
-                    tw="flex items-center justify-center rounded-md border border-transparent bg-white px-5 py-3 text-base font-medium text-indigo-600"
-                  >
-                    Learn more
-                  </a>
-                </div>
-              </div>
-            </div>
+          <div
+            style={{
+              left: 42,
+              top: 42,
+              position: 'absolute',
+              display: 'flex',
+              alignItems: 'center'
+            }}
+          >
+            <span
+              style={{
+                marginLeft: 8,
+                fontSize: 30,
+                color: 'white'
+              }}
+            >
+            </span>
+          </div>
+          <div
+            style={{
+              display: 'flex',
+              flexWrap: 'wrap',
+              padding: '20px 50px',
+              margin: '0 42px',
+              fontSize: 40,
+              width: 'auto',
+              maxWidth: 550,
+              textAlign: 'center',
+              backgroundColor: 'black',
+              color: 'white',
+              lineHeight: 1.4,
+              fontWeight: 650
+            }}
+          >
+            og/Image is hella bugged out.
           </div>
         </div>
       ),
+
       {
         width: 1200,
         height: 600

@@ -8,6 +8,7 @@ export interface MetaTypes {
     siteRepo: string 
     avatarImage: string 
     avatarImage_2: string 
+    ogImage: string
     email: string 
     github: string
     githubHandle: string 
@@ -26,10 +27,11 @@ export const siteMetaData: MetaTypes = {
     siteRepo: "",
     avatarImage: "/static/zach_khong.jpg", 
     avatarImage_2: "/static/eevee_zach.jpg",
+    ogImage: "/static/imageOg.png",
     email: "mailto:lkho0007@student.monash.edu", 
     github:"https://github.com/multipletwigs",
     githubHandle: "@multipletwigs", 
     linkedin: "https://www.linkedin.com/in/zach-khong/",
-    resume: 'public/static/Internship Resume (Khong Lap Hoe)-compressed.pdf',
+    resume: '/static/resume.pdf',
     locale: 'en-MY'
 }
