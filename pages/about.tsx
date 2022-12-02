@@ -6,32 +6,22 @@ import Image from 'next/future/image';
 import { siteMetaData } from 'data/siteMetadata';
 import GlassBio from 'components/about_components/GlassBio';
 import WorkExpTable from 'components/about_components/WorkExpTable';
+import Tag from 'components/Tag';
 
 const self_intro = (
-  <p className="my-4 text-justify text-lg dark:text-slate-200">
-    I eventually got burnt out from memorization in Biology and ventured into a
-    domain that I&apos;ve never even heard of before: Computer Science.
+  <p className="mb-4 text-justify text-lg dark:text-slate-200">
+    Hello there reader, a pleasure to meet you! My name is Zach Khong and
+    I&apos;m a final year CS Student at Monash University Malaysia. Believe it or not, I only started coding during the start of the pandemic, and was on the path to pursue a Medicine degree before that. Fortunately, I did not go down that path as I realized that I was not enjoying what I was studying. After my Cambridge A-Levels exam, I have decided to take the leap of faith and try out coding, and boy, I&apos;m glad I did. Thanks CS50!
     <br />
     <br />
-    Alright! Yes, my professional skills? I&apos;m a full stack developer, and I
-    realized that I&apos;m rather good at UI/UX Designs and Front-end
-    development. I call myself full stack as I work so closely with backend
-    teams I sometimes write the backend myself. But what I love is still
-    Frontend Development and design.
-    <br />
-    <br />
-    I&apos;m currently leading a self-learning group called UReview, and since
-    we have no work experience, everything that I know now is done through
-    self-learning. Lorem ipsum dolor sit amet consectetur adipisicing elit.
-    Facilis numquam laborum in accusantium veniam necessitatibus molestiae
-    ducimus qui, repellendus rerum.
+    I&apos;m currently interning at Estee Lauder Companies as a Software Engineer.
   </p>
 );
 
 const aboutContent = {
   name: 'ZACH KHONG',
   chi_name: '邝立浩',
-  header: 'Everything I wanted to do in my life is to create what I want to',
+  header: 'My life before now',
   self_intro_p: self_intro,
   tech_exp_header: 'Recent Projects',
   tech_exp_p:
@@ -42,8 +32,8 @@ const about: NextPage = () => {
   return (
     <Container>
       <SerifHeader
-        title={'Who I am and what I want to be?'}
-        footer_desc={'Everything about my professional career'}
+        title={'Who I am and what do I want to be?'}
+        footer_desc={'Everything about my life'}
       />
       <div className="mt-5 md:mt-20">
         <GlassBio />

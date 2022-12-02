@@ -7,6 +7,27 @@ import { BlogCardType, getBlogCardInfo } from 'lib/getBlogContent';
 import ArticleGrid from 'components/ArticleGrid';
 import FeaturedArticles from 'components/FeaturedArticles';
 
+const homeSpans = {
+  zach_khong: (
+    <span className="text-indigo-400">
+      {' '}
+      Zach Khong
+    </span>
+  ),
+  monash_university_malaysia: (
+    <a href="https://www.monash.edu.my/" target="_blank" className="hover:underline hover:text-indigo-400">
+      {' '}
+      Monash University Malaysia{' '}
+    </a>
+  ),
+  estee_lauder_companies: (
+    <a href="https://www.elcompanies.com/en" target="_blank" className="hover:underline hover:text-indigo-400">
+      {' '}
+      Estee Lauder Companies{' '}
+    </a>
+  )
+};
+
 /*
 Exporting getStaticProps will allow you to share a state in that is called in lib. 
 Whatever that is returned as props here will be passed down into the component below. 
@@ -49,13 +70,15 @@ const Home = ({
           ></Image>
           <h1 className="w-[90%] text-2xl font-bold md:text-4xl">
             Hi, I&apos;m
-            <span className="text-indigo-400"> Zach Khong. </span>
-            I&apos;m a developer, and a final year Computer Science student at
-            Monash University.
+            {homeSpans.zach_khong}.
+            I&apos;m a final year Computer Science student at{' '}
+            {homeSpans.monash_university_malaysia}
+            and a SWE intern at{' '}
+            {homeSpans.estee_lauder_companies}
           </h1>
           <p className="mt-5 w-[80%] text-lg font-medium sm:w-[80%] md:w-[80%] md:text-xl">
             An aspiring Software Engineer and UI Designer. Making your software
-            look lively and wonderful, and dangerously practical. I&apos;ll create anything you possibly need.
+            look lively, and dangerously practical. Currently living in Frontend Development!
           </p>
           <div className="flex gap-5 py-5">
             <button
@@ -78,11 +101,10 @@ const Home = ({
         </hgroup>
         <div className="mt-20">
           <h1 className="w-[90%] text-2xl font-bold md:text-4xl">
-            Check out my featured articles!
+            Featured Articles!
           </h1>
           <p className="mt-5 w-[80%] text-lg font-medium sm:w-[80%] md:w-[80%] md:text-xl">
-            I write about my experiences and what I&apos;m learning and
-            creating.
+            I write about my experiences, what I&apos;m learning and creating.
           </p>
           <FeaturedArticles>
             <ArticleGrid postItems={postItems} />

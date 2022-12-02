@@ -20,7 +20,7 @@ const Tag = (tagProps: TagProps) => {
       {tagProps.link ? (
         // When using target="_blank", you must also set rel="noreferrer"
         // see https://mathiasbynens.github.io/rel-noopener/#recommendations
-        <a href={tagProps.link.href} target="_blank" rel="noreferrer">
+        <a href={tagProps.link.href} target="_blank" rel="noreferrer" className="inline-flex">
           <span
             className={`${tagProps.textColor} ${tagProps.bgColor} flex w-[fit-content] items-center gap-1 rounded-md px-3 py-1 text-center text-sm font-bold hover:underline`}
           >
