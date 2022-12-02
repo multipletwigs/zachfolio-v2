@@ -15,13 +15,13 @@ const homeSpans = {
     </span>
   ),
   monash_university_malaysia: (
-    <a href="https://www.monash.edu.my/" target="_blank" className="hover:underline hover:text-indigo-400">
+    <a href="https://www.monash.edu.my/" rel="noreferrer" target="_blank" className="hover:underline hover:text-indigo-400">
       {' '}
       Monash University Malaysia{' '}
     </a>
   ),
   estee_lauder_companies: (
-    <a href="https://www.elcompanies.com/en" target="_blank" className="hover:underline hover:text-indigo-400">
+    <a href="https://www.elcompanies.com/en" rel="noreferrer" target="_blank" className="hover:underline hover:text-indigo-400">
       {' '}
       Estee Lauder Companies{' '}
     </a>
