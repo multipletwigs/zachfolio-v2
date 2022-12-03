@@ -23,7 +23,7 @@ const BlogCard = (props: BlogCardType) => {
   return (
     <Link
       href={{
-        pathname: `/blog/${blogName}`
+        pathname: `/project/${blogName}`
       }}
     >
       <div className="transition-color flex w-full flex-col rounded-xl p-3 transition-all hover:bg-slate-500/40 md:w-[350px]">

@@ -3,33 +3,40 @@ import Tag from 'components/Tag';
 export interface TechExperienceType {
   name: string;
   description: string;
-  link: string;
   stack: JSX.Element[];
 }
 
 export const TechExperience: TechExperienceType[] = [
   {
-    name: 'UReview Monash',
+    name: 'Rust and Tauri',
     description:
-      'A web application funded by the school that allows students to review their courses and lecturers. I am responsible for the fullstack development and DevOps for the site. Using technology like Angular, React, Django, Digital Ocean and more. I spend a lot of time on this project and I am proud of the work I have done. Currently revamping the site using a more modern stack with better design.',
-    link: 'testing',
+      'Every Software Engineer should learn a low-level programming language. Rust just seems like the logical choice here right now, and Tauri is what I would be using to create mini-projects along the way. I emphaize a lot on Developer Experience, and with better memory management than C++ and a more modern syntax, Rust seems like the perfect choice for me. Through this I will also be able to understand the common limitations of other similar low-level languages that is solved by Rust (ahem, googled, hopefully I will be able to defend this statement when I learn enough).',
     stack: [
       <Tag
-        content="November 2021 - Now"
+        content="December 2022 - Now"
         bgColor="bg-orange-300/40 dark:bg-orange-400/30"
         textColor="text-orange-700 dark:text-orange-300"
         key="1"
-      />
+      />,
+      <Tag
+        content={''}
+        bgColor="bg-slate-400/30 dark:bg-slate-400/30"
+        textColor="text-slate-700 dark:text-slate-300"
+        link={{
+          name: 'The Rust Book',
+          href: 'https://doc.rust-lang.org/book/'
+        }}
+        key="1"
+      ></Tag>
     ]
   },
   {
-    name: 'Vaccu Monash',
+    name: 'SEO for better reach',
     description:
-      'A web application funded by the Monash School of Medicine to keep track of vaccine records mandatory for students for them to undergo their hospital shadow visits. I was responsible for Frontend Development, however I was still in training phase for the project, and before I could contribute anything significant to the project, it was handed over to the Official Monash Technology Team. I was able to learn a lot about React during this project.',
-    link: 'testing',
+      'The reason why I created this personal portfolio and blog site was to make it accessible to anyone at all, and have it gain attention all around the globe. This means that I have to optimize my pages for SEO and ensure that I consistently rank well for the keywords that I want to target. Hence, I have created this site in Next.js for its SSR capabilities which generates contentful HTML on 1st resource request. This means that Google Web Crawlers are able to scan through written content. It is still a long way ahead before I can fully optimize the whole site.',
     stack: [
       <Tag
-        content="May 2022 - July 2022"
+        content="November 2022 - Now"
         bgColor="bg-purple-300/40 dark:bg-purple-400/30"
         textColor="text-purple-700 dark:text-purple-300"
         key="2"
@@ -37,32 +44,15 @@ export const TechExperience: TechExperienceType[] = [
     ]
   },
   {
-    name: 'Monash University',
+    name: 'Leetcode',
     description:
-      'This was where my coding journey began. My degree currently states Bachelors of Computer Science in Data Science, but my academic transcripts shows that I am currently taking core units from both paths. I study software design patters, Databases, Data Structures and Algorithms, Deep Learning, Malicious AI, Cybersecurity and more, as part of my degree. Currently working on a Video Captioning DL Model for my final year project.',
-    link: 'testing',
+      'Yes, leetcode, your ticket to a good company that only hires the best. It is obvious that LC is being used as a candidate filter. Hence, I try to do as many LC problems as I can using whatever algorithm knowledge that I have at the moment. Every problem on LC could be solved using brute-force, which is why I spend a lot of time researching on the best time-complexity to solve a problem. Not only that, but even if I do solve a problem with a satifying time-complexity, it is important to ponder on potential solutions that could be even better, as that is the basis of continuous improvement.',
     stack: [
       <Tag
-        content="October 2020 - Now"
+        content="October 2022 - Now"
         bgColor="bg-orange-400/30 dark:bg-orange-400/30"
         textColor="text-orange-700 dark:text-orange-300"
         key="3"
-      />,
-      <Tag
-        content="Graduating @ June 2023"
-        bgColor="bg-orange-400/30 dark:bg-orange-400/30"
-        textColor="text-orange-700 dark:text-orange-300"
-        key="3"
-      />,
-      <Tag
-        content="October 2020 - Now"
-        bgColor="bg-slate-400/30 dark:bg-slate-400/30"
-        textColor="text-slate-700 dark:text-slate-300"
-        key="3"
-        link={{
-          href: 'https://www.monash.edu/',
-          name: 'Blog Write-up!'
-        }}
       />
     ]
   }

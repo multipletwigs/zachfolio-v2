@@ -1,5 +1,5 @@
 import React from 'react'
-import { FiGithub, FiLinkedin, FiMail, FiInstagram } from 'react-icons/fi'
+import { FiGithub, FiLinkedin, FiMail, FiTwitter } from 'react-icons/fi'
 
 export const external_links = [
   {
@@ -18,9 +18,9 @@ export const external_links = [
     icon: <FiMail size="1.5em" />,
   },
   {
-    name: 'instagram',
-    href: 'https://www.instagram.com/afewsadtwigs/',
-    icon: <FiInstagram size="1.5em" />,
+    name: 'twitter',
+    href: 'https://twitter.com/multipletwigs',
+    icon: <FiTwitter size="1.5em" />,
   }
 ]
 

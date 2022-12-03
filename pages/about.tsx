@@ -23,9 +23,9 @@ const aboutContent = {
   chi_name: '邝立浩',
   header: 'My life before now',
   self_intro_p: self_intro,
-  tech_exp_header: 'Recent Projects',
+  tech_exp_header: 'What I am currently learning',
   tech_exp_p:
-    "I have been coding for a year or two now. I've racked up a lot of rudimentary knowledge in software engineering. Be it through assignments, hackathons, personal projects or school organizations, I spend a lot of time to hone my craft. I'll mention a few highlights :)"
+    "I have been coding for a year or two now. I have a pretty clear idea of how I should get good at something. Now, repeat after me, NEVER FALL INTO TUTORIAL HELL. Learn what you need to get started, but always create small, simple projects to consolidate what you have learnt. You will understand what to learn as you start to implement features. This section will hold me accountable for my learning progress, and serves as a reminder that I should not give up."
 };
 
 const about: NextPage = () => {

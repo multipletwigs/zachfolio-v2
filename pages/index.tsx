@@ -84,7 +84,7 @@ const Home = ({
             <button
               className=" rounded-lg border-2 border-transparent bg-slate-700 px-5 py-2 font-semibold text-slate-200 transition-colors duration-300 hover:outline"
               onClick={() => {
-                router.push('/blog');
+                router.push('/project');
               }}
             >
               Explore What I Know
@@ -101,10 +101,10 @@ const Home = ({
         </hgroup>
         <div className="mt-20">
           <h1 className="w-[90%] text-2xl font-bold md:text-4xl">
-            Featured Articles!
+            Featured Projects!
           </h1>
           <p className="mt-5 w-[80%] text-lg font-medium sm:w-[80%] md:w-[80%] md:text-xl">
-            I write about my experiences, what I&apos;m learning and creating.
+            A detailed list of projects that I have worked on, and am currently working on.
           </p>
           <FeaturedArticles>
             <ArticleGrid postItems={postItems} />

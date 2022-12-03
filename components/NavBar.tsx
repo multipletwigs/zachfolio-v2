@@ -26,7 +26,7 @@ const Hamburger = () => {
               <div className="flex flex-col rounded-lg bg-slate-100 py-3 shadow-lg ring-1 ring-black ring-opacity-5 dark:bg-slate-900">
                 <div className="py-3 pl-3 text-lg font-bold">NAVIGATION</div>
                 <NavItem href={'/'} navTitle={'Home'} />
-                <NavItem href={'/blog'} navTitle="Blogs" />
+                <NavItem href={'/project'} navTitle="Projects" />
                 <NavItem href={'/about'} navTitle="About Me" />
                 <hr className=""></hr>
                 <div className="mt-3 flex flex-row justify-center align-middle">

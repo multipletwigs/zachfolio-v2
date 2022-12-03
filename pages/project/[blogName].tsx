@@ -13,6 +13,13 @@ import {
 import { GetStaticProps } from 'next/types';
 import slugify from 'slugify';
 
+/**
+ * !Warning 
+ * Do not be confused between blog and project! They are two different things.
+ * Currently renamed to Project for immediate need for project page, but this was
+ * blog before. 
+ */
+
 export const formatDate = (date: string) => {
   return new Date(date).toLocaleDateString(siteMetaData.locale, {
     year: 'numeric',
