@@ -1,7 +1,7 @@
-import { Popover, Transition } from '@headlessui/react';
+import { Popover } from '@headlessui/react';
 import NextLink from 'next/link';
 import { useRouter } from 'next/router';
-import { GiHammerDrop, GiHamburgerMenu } from 'react-icons/gi';
+import { GiHamburgerMenu } from 'react-icons/gi';
 import { ThemeToggle } from './ThemeToggle';
 
 interface NavItemType {
