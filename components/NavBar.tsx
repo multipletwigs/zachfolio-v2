@@ -75,7 +75,7 @@ const NavBar = () => {
         <div className="font-bold">zachfolio</div>
         <div className="invisible sm:visible sm:space-x-10">
           <NavItem href={'/'} navTitle={'Home'} />
-          <NavItem href={'/blog'} navTitle="Blogs" />
+          <NavItem href={'/project'} navTitle="Projects" />
           <NavItem href={'/about'} navTitle="About Me" />
         </div>
         <div className="hidden md:inline">
