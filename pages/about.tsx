@@ -14,7 +14,7 @@ const self_intro = (
     I&apos;m a final year CS Student at Monash University Malaysia. Believe it or not, I only started coding during the start of the pandemic, and was on the path to pursue a Medicine degree before that. Fortunately, I did not go down that path as I realized that I was not enjoying what I was studying. After my Cambridge A-Levels exam, I have decided to take the leap of faith and try out coding, and boy, I&apos;m glad I did. Thanks CS50!
     <br />
     <br />
-    I&apos;m currently interning at Estee Lauder Companies as a Software Engineer.
+    I&apos;m currently interning at Estee Lauder Companies as a Software Engineer where I will be implementing an app and a website to help the company&apos;s accessability efforts, allowing their products to reach those that have difficulty using them. 
   </p>
 );
 
