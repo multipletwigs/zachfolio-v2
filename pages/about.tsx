@@ -33,7 +33,7 @@ const about: NextPage = () => {
     <Container>
       <SerifHeader
         title={'Who I am and what do I want to be?'}
-        footer_desc={'Everything about my life'}
+        footer_desc={'A glimpse into my life'}
       />
       <div className="mt-5 md:mt-20">
         <GlassBio />
