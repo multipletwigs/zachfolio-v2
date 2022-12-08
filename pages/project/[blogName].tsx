@@ -14,10 +14,10 @@ import { GetStaticProps } from 'next/types';
 import slugify from 'slugify';
 
 /**
- * !Warning 
+ * !Warning
  * Do not be confused between blog and project! They are two different things.
  * Currently renamed to Project for immediate need for project page, but this was
- * blog before. 
+ * blog before.
  */
 
 export const formatDate = (date: string) => {
@@ -28,13 +28,42 @@ export const formatDate = (date: string) => {
   });
 };
 
+const BlogEnding = () => {
+  return (
+    <div className="mt-5 flex flex-col rounded-lg bg-indigo-500/10 p-5 leading-9 outline outline-2 outline-indigo-800/20 backdrop-blur-lg dark:outline-indigo-500/40">
+      <h1 className="text-xl font-bold">
+        Thanks for reading till the end 🥰🥰
+      </h1>
+      <p className="text-md mt-4">
+        Hopefully now you understand more about what I do for this particular
+        project! If you have any questions, or see anything incorrect, please
+        let me know by dropping me an email through the profile card on the{' '}
+        <Tag
+          content={''}
+          textColor={'text-blue-700 dark:text-cyan-300'}
+          bgColor={'bg-blue-400/30 dark:bg-cyan-700/30'}
+          link={{
+            name: 'About Me',
+            href: '/about'
+          }}
+        />{' '}
+        page!
+        <br />
+        <br />
+        If you realise 😆 that I am someone you would like to work with, do not
+        hesitate to contact me 🧐 because I ❤️ everything I am doing now and
+        want to share my joy 🥳 with you through collaboration.
+      </p>
+    </div>
+  );
+};
+
 const BlogPage = (props: any) => {
-  
   const blogMeta: MetaTypes = {
     ...siteMetaData,
-    title: `Zach Khong | ${props.blogTitle}`, 
-    description: props.blogMetaDesc,
-  }
+    title: `Zach Khong | ${props.blogTitle}`,
+    description: props.blogMetaDesc
+  };
 
   return (
     <Container customMeta={blogMeta}>
@@ -56,6 +85,7 @@ const BlogPage = (props: any) => {
           return <BlockRender {...block} key={idx} />;
         })}
       </div>
+      <BlogEnding></BlogEnding>
     </Container>
   );
 };

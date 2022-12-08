@@ -4,18 +4,25 @@
 
 /* Extra utility classes are added to style the scrollbar */
 @layer utilities {
-    .scrollbar::-webkit-scrollbar {
-      width: 10px;
-      height: 10px;
-    }
-  
-    .scrollbar::-webkit-scrollbar-track {
-      background: bg-gray-800;
-    }
-  
-    .scrollbar::-webkit-scrollbar-thumb {
-      background: #575370;
-      border-radius: 100vh;
-    }
+  .scrollbar::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
   }
+
+  .scrollbar::-webkit-scrollbar-track {
+    background: bg-gray-800;
+  }
+
+  .scrollbar::-webkit-scrollbar-thumb {
+    background: #575370;
+    border-radius: 100vh;
+  }
+}
+
+@layer base {
+  body {
+    @apply bg-[#F5F6FB] dark:bg-gray-800 scrollbar
+  }
+}
+
   

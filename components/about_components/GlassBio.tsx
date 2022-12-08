@@ -1,5 +1,4 @@
 import { external_links } from 'components/Footer';
-import Tag from 'components/Tag';
 import React from 'react';
 
 interface BiographyItem {

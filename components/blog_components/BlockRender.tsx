@@ -1,8 +1,10 @@
+import Tag from 'components/Tag';
 import { useTheme } from 'next-themes';
 import Highlight, { defaultProps } from 'prism-react-renderer';
 import nightOwl from 'prism-react-renderer/themes/nightOwl';
 import nightOwlLight from 'prism-react-renderer/themes/nightOwlLight';
 import React from 'react';
+import Image from 'next/image';
 
 export interface BlogBlocks {
   type: string;
@@ -56,8 +58,20 @@ const _constructClass = (annotations: _TextAnnotations) => {
 const _renderChildBlocks = (rich_text: RichText[]) => {
   const text_render = rich_text.map((richText: RichText, idx: number) => {
     const classes: string = _constructClass(richText.annotations);
-    return (
-      <span className={classes} key={idx}>
+    return richText.text.link ? (
+      <span key={idx}>
+        <Tag
+          content={''}
+          textColor={'text-blue-700 dark:text-cyan-300'}
+          bgColor={'bg-blue-400/30 dark:bg-cyan-700/30'}
+          link={{
+            name: richText.text.content,
+            href: richText.text.link
+          }}
+        />
+      </span>
+    ) : (
+      <span className={`${classes} leading-9 text-lg`} key={idx}>
         {richText.text.content}
       </span>
     );
@@ -68,14 +82,19 @@ const _renderChildBlocks = (rich_text: RichText[]) => {
 
 const BlockRender = (props: BlogBlocks) => {
   const { resolvedTheme } = useTheme();
+
+  if(!props){
+    return <br/>
+  }
+  
   try {
     switch (props.type) {
       case 'heading_1':
         const h1Text = props.content.rich_text[0].plain_text;
-        return <h1 className="text-xl font-bold md:text-3xl">{h1Text}</h1>;
+        return <h1 className="text-2xl font-bold md:text-3xl">{h1Text}</h1>;
       case 'paragraph':
         return (
-          <p className="">{_renderChildBlocks(props.content.rich_text)}</p>
+          <p>{_renderChildBlocks(props.content.rich_text)}</p>
         );
       case 'callout':
         return (
@@ -86,7 +105,7 @@ const BlockRender = (props: BlogBlocks) => {
         );
       case 'image':
         const imageSrc = props.content.file.url;
-        const imageAlt = props.content.caption
+        const imageAlt = props.content.caption[0]
           ? props.content.caption[0].plain_text
           : 'Image describing blog';
         return (
@@ -135,9 +154,8 @@ const BlockRender = (props: BlogBlocks) => {
         return <p>Block Unrecognized</p>;
     }
   } catch (e) {
-    // This is a special case for line breaks, because props is undefined, props.type throws an error
-    // Since there are no line breaks in Notion, catching it here so it can act as one
-    return <br />;
+    console.log(e);
+    return <></>
   }
 };
 
