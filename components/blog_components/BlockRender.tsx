@@ -150,6 +150,9 @@ const BlockRender = (props: BlogBlocks) => {
             </Highlight>
           </div>
         );
+      case 'divider':{
+        return <br/>
+      }
       default:
         return <p>Block Unrecognized</p>;
     }
