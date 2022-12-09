@@ -55,7 +55,7 @@ const _constructClass = (annotations: _TextAnnotations) => {
   return className.join(' ');
 };
 
-const _renderChildBlocks = (rich_text: RichText[]) => {
+const _renderChildBlocks = (rich_text: RichText[], text_size?: string) => {
   const text_render = rich_text.map((richText: RichText, idx: number) => {
     const classes: string = _constructClass(richText.annotations);
     return richText.text.link ? (
@@ -71,7 +71,7 @@ const _renderChildBlocks = (rich_text: RichText[]) => {
         />
       </span>
     ) : (
-      <span className={`${classes} leading-9 text-lg`} key={idx}>
+      <span className={`${classes} leading-9 ${text_size}`} key={idx}>
         {richText.text.content}
       </span>
     );
@@ -83,19 +83,20 @@ const _renderChildBlocks = (rich_text: RichText[]) => {
 const BlockRender = (props: BlogBlocks) => {
   const { resolvedTheme } = useTheme();
 
-  if(!props){
-    return <br/>
+  if (!props) {
+    return <br />;
   }
-  
+
   try {
     switch (props.type) {
       case 'heading_1':
-        const h1Text = props.content.rich_text[0].plain_text;
-        return <h1 className="text-2xl font-bold md:text-3xl">{h1Text}</h1>;
-      case 'paragraph':
         return (
-          <p>{_renderChildBlocks(props.content.rich_text)}</p>
+          <h1 className="font-bold">
+            {_renderChildBlocks(props.content.rich_text, 'text-2xl md:text-3xl')}
+          </h1>
         );
+      case 'paragraph':
+        return <p>{_renderChildBlocks(props.content.rich_text, 'text-lg')}</p>;
       case 'callout':
         return (
           <div className="my-5 w-[100%] rounded-lg bg-slate-300/40 p-5 dark:bg-slate-400/40">
@@ -135,7 +136,7 @@ const BlockRender = (props: BlogBlocks) => {
               {({ tokens, getLineProps, getTokenProps }) => (
                 <pre
                   className={
-                    'scrollbar overflow-x-scroll bg-slate-300/30 p-5 dark:bg-slate-900'
+                    'scrollbar overflow-x-scroll bg-slate-300/30 p-5 dark:bg-slate-900 max-h-[500px] overflow-y-scroll'
                   }
                 >
                   {tokens.map((line, i) => (
@@ -150,15 +151,15 @@ const BlockRender = (props: BlogBlocks) => {
             </Highlight>
           </div>
         );
-      case 'divider':{
-        return <br/>
+      case 'divider': {
+        return <br />;
       }
       default:
         return <p>Block Unrecognized</p>;
     }
   } catch (e) {
     console.log(e);
-    return <></>
+    return <></>;
   }
 };
 
