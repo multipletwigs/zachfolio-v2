@@ -1,27 +1,52 @@
-# Next.js + Tailwind CSS Example
+# Zachfolio
 
-This example shows how to use [Tailwind CSS](https://tailwindcss.com/) [(v3.0)](https://tailwindcss.com/blog/tailwindcss-v3) with Next.js. It follows the steps outlined in the official [Tailwind docs](https://tailwindcss.com/docs/guides/nextjs).
+Zachfolio is a personal blog website created using Next.js, Notion API, and Tailwind CSS. 
 
-## Deploy your own
+## Technologies Used
 
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example) or preview live with [StackBlitz](https://stackblitz.com/github/vercel/next.js/tree/canary/examples/with-tailwindcss)
+- [Next.js](https://nextjs.org/)
+- [Notion API](https://developers.notion.com/)
+- [Tailwind CSS](https://tailwindcss.com/)
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/vercel/next.js/tree/canary/examples/with-tailwindcss&project-name=with-tailwindcss&repository-name=with-tailwindcss)
+## Getting Started
 
-## How to use
+To run the project locally, follow these steps:
 
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init), [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/), or [pnpm](https://pnpm.io) to bootstrap the example:
+1. Clone the repository:
 
-```bash
-npx create-next-app --example with-tailwindcss with-tailwindcss-app
+```
+git clone https://github.com/your-username/zachfolio.git
 ```
 
-```bash
-yarn create next-app --example with-tailwindcss with-tailwindcss-app
+2. Install the dependencies:
+
+```
+cd zachfolio-v2
+npm install
 ```
 
-```bash
-pnpm create next-app --example with-tailwindcss with-tailwindcss-app
+3. Create a `.env.local` file at the root of the project and add your Notion API key and database ID:
+
+```
+NOTION_API_KEY=your-notion-api-key-here
+NOTION_DATABASE_ID=your-notion-database-id-here
 ```
 
-Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
+4. Start the development server:
+```
+npm run dev
+```
+
+5. Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+## Deploying
+
+The website can be deployed to a variety of hosting services such as Vercel, Heroku, or Netlify. Simply set up a deployment pipeline that runs the `npm run build` command to build the project and then runs the `npm run start` command to start the server.
+
+## Contributing
+
+Contributions are welcome! If you find any bugs or have any suggestions for improvement, feel free to open an issue or submit a pull request.
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
