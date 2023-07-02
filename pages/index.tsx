@@ -71,10 +71,9 @@ const Home = ({
           <h1 className="w-[90%] text-2xl font-bold md:text-4xl">
             Hi, I&apos;m
             {homeSpans.zach_khong}.
-            I&apos;m a final year Computer Science student at{' '}
+            I&apos;m a Computer Science fresh graduate at{' '}
             {homeSpans.monash_university_malaysia}
-            and a SWE intern at{' '}
-            {homeSpans.estee_lauder_companies}
+            and software engineer in training!
           </h1>
           <p className="mt-5 w-[80%] text-lg font-medium sm:w-[80%] md:w-[80%] md:text-xl">
             An aspiring Software Engineer and UI Designer. Making your software

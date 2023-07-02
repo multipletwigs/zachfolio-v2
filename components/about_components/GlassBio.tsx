@@ -21,7 +21,7 @@ const BioGraphyItems: BiographyItem[] = [
   },
   {
     key: 'Year Level',
-    desc: 'Year 3 Semester 1 @ 85 WAM & 3.8 GPA'
+    desc: 'Year 3 Semester 2 @ 86 WAM & 3.9 GPA'
   },
   {
     key: 'Interests',
