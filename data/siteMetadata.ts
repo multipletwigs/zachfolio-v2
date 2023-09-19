@@ -18,10 +18,10 @@ export interface MetaTypes {
 }
 
 export const siteMetaData: MetaTypes = {
-    title: 'Zach Khong - Student, full-stack developer, lifelong learner.',
+    title: 'Zachfolio 🐟',
     author: 'Zach Khong', 
     headerTitle: "Zach Khong's Portfolio", 
-    description: "Hi, I'm Zach Khong. I'm a developer, and student at Monash University.",
+    description: "Design Engineer",
     language: 'en-MY',
     siteUrl: 'https://zachfolio.info', 
     siteRepo: "",
